@@ -1,106 +1,41 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Login do Cliente</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(120deg, #2980b9, #6dd5fa);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-
-    .login-container {
-      background-color: #fff;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-      width: 100%;
-      max-width: 400px;
-    }
-
-    .login-container h2 {
-      text-align: center;
-      margin-bottom: 24px;
-      color: #333;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 6px;
-      font-weight: bold;
-      color: #444;
-    }
-
-    input[type="email"],
-    input[type="password"] {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 16px;
-    }
-
-    .login-btn {
-      width: 100%;
-      padding: 12px;
-      background-color: #3498db;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .login-btn:hover {
-      background-color: #2980b9;
-    }
-
-    .forgot-link {
-      display: block;
-      text-align: right;
-      margin-top: 10px;
-      color: #2980b9;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    .forgot-link:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="login-container">
-    <h2>Login do Cliente Testando Todas as Possibilidade</h2>
-    <form>
+    <h2>Login do Cliente</h2>
+    <form id="loginForm">
       <div class="form-group">
         <label for="email">E-mail</label>
-        <input type="email" id="email" name="email" required placeholder="seuemail@exemplo.com">
+        <input type="email" id="email" name="email" required placeholder="seuemail@exemplo.com" />
       </div>
       <div class="form-group">
         <label for="senha">Senha</label>
-        <input type="password" id="senha" name="senha" required placeholder="********">
+        <input type="password" id="senha" name="senha" required placeholder="********" />
       </div>
       <button type="submit" class="login-btn">Entrar</button>
       <a href="#" class="forgot-link">Esqueceu a senha?</a>
     </form>
   </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const emailCorreto = "cliente@mercado.com";
+      const emailDigitado = document.getElementById("email").value;
+
+      if (emailDigitado === emailCorreto) {
+        window.location.href = "mercadinho.html";
+      } else {
+        alert("E-mail incorreto! Tente novamente.");
+      }
+    });
+  </script>
 </body>
 </html>
-
-
