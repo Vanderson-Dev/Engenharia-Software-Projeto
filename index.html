@@ -1,41 +1,122 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Login do Cliente</title>
-  <link rel="stylesheet" href="styles.css" />
+    <script src="https://kit.fontawesome.com/6dda5f6271.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="slide.css">
+    <script src="slide.js" defer></script>
+    <title>Banco Inteliogia</title>
 </head>
 <body>
-  <div class="login-container">
-    <h2>Login do Cliente</h2>
-    <form id="loginForm">
-      <div class="form-group">
-        <label for="email">E-mail</label>
-        <input type="email" id="email" name="email" required placeholder="seuemail@exemplo.com" />
-      </div>
-      <div class="form-group">
-        <label for="senha">Senha</label>
-        <input type="password" id="senha" name="senha" required placeholder="********" />
-      </div>
-      <button type="submit" class="login-btn">Entrar</button>
-      <a href="#" class="forgot-link">Esqueceu a senha?</a>
-    </form>
-  </div>
+    <header>
+        <div class="container">
+            <div class="logo"><img src="img/logo.png" alt="Logo Banco Inteliogia"></div>
+            <div class="menu">
+                <nav>
+                    <a href="#home">Início</a>
+                    <a href="#sobre">Sobre Nós</a>
+                    <a href="#servicos">Serviços</a>
+                    <a href="#vantagens">Vantagens</a>
+                    <a href="#contato">Contato</a>
+                </nav>
+            </div>
 
-  <script>
-    document.getElementById("loginForm").addEventListener("submit", function(event) {
-      event.preventDefault();
+            <div class="social">
+                <button><i class="fa-brands fa-instagram"></i></button>
+                <button><i class="fa-brands fa-facebook-f"></i></button>
+                <button><i class="fa-brands fa-linkedin-in"></i></button>
+            </div>
+        </div>
+    </header>
 
-      const emailCorreto = "cliente@mercado.com";
-      const emailDigitado = document.getElementById("email").value;
+    <section class="slider">
+        <div class="slider-content">
+            <input type="radio" name="btn-radio" id="radio1" checked>
+            <input type="radio" name="btn-radio" id="radio2">
+            <input type="radio" name="btn-radio" id="radio3">
 
-      if (emailDigitado === emailCorreto) {
-        window.location.href = "mercadinho.html";
-      } else {
-        alert("E-mail incorreto! Tente novamente.");
-      }
-    });
-  </script>
+            <div class="slide-box primeiro">
+                <img class="img-desktop" src="img/banco-slide1.jpg" alt="Aplicativo Banco Inteliogia">
+                <img class="img-mobile" src="img/banco-slide1-mob.jpg" alt="Aplicativo Banco Inteliogia">
+            </div>
+
+            <div class="slide-box">
+                <img class="img-desktop" src="img/banco-slide2.jpg" alt="Conta Digital Completa">
+                <img class="img-mobile" src="img/banco-slide2-mob.jpg" alt="Conta Digital Completa">
+            </div>
+
+            <div class="slide-box">
+                <img class="img-desktop" src="img/banco-slide3.jpg" alt="Investimentos Inteligentes">
+                <img class="img-mobile" src="img/banco-slide3-mob.jpg" alt="Investimentos Inteligentes">
+            </div>
+
+            <div class="nav-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+            </div>
+
+            <div class="nav-manual">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
+            </div>
+        </div>
+    </section>
+
+    <section id="home">
+        <div class="container1">
+            <h2>Bem-vindo ao Banco Inteliogia</h2>
+            <p>Transformamos sua relação com o dinheiro. Acesse serviços bancários 100% digitais, seguros e fáceis de usar. Tudo o que você precisa está a um clique de distância.</p>
+            <p>Controle suas finanças, invista com inteligência, solicite cartões e gerencie sua conta direto do seu smartphone com praticidade e autonomia.</p>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <div class="container1">
+            <h2>Sobre Nós</h2>
+            <p>Somos um banco digital comprometido com a inovação e com a experiência do cliente. Fundado com a missão de simplificar o acesso ao sistema financeiro, oferecemos serviços personalizados e atendimento humano, mesmo em um mundo digital.</p>
+            <p>Com tecnologia de ponta e foco em segurança, proporcionamos liberdade financeira para você viver o presente e planejar o futuro.</p>
+        </div>
+    </section>
+
+    <section id="servicos">
+        <div class="container1">
+            <h2>Nossos Serviços</h2>
+            <ul>
+                <li>Conta digital gratuita com Pix e TED ilimitados</li>
+                <li>Cartão de crédito sem anuidade</li>
+                <li>Investimentos com rentabilidade acima da média</li>
+                <li>Empréstimos e financiamentos personalizados</li>
+                <li>Atendimento 24h via chat e app</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="vantagens">
+        <div class="container1">
+            <h2>Por que escolher o Inteliogia?</h2>
+            <p>✔ Zero tarifas escondidas</p>
+            <p>✔ Tudo na palma da sua mão</p>
+            <p>✔ Maior controle financeiro</p>
+            <p>✔ Interface simples e intuitiva</p>
+            <p>✔ Atendimento premiado</p>
+        </div>
+    </section>
+
+    <section id="contato">
+        <div class="container1">
+            <h2>Fale Conosco</h2>
+            <p>Estamos prontos para ajudar! Envie sua dúvida, sugestão ou solicitação através dos nossos canais:</p>
+            <ul>
+                <li>Email: atendimento@inteliogiabank.com</li>
+                <li>WhatsApp: (11) 90000-0000</li>
+                <li>Telefone: 0800 123 456</li>
+            </ul>
+        </div>
+    </section>
 </body>
 </html>
