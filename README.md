@@ -3,7 +3,7 @@
 
 ### Histórias de usuário atribuídas a Arthur Pinheiro
 - [ ] Como usuário, quero fazer transferências bancárias para movimentar meu dinheiro entre contas.
-- [ ] Como usúario, quero aumentar o limite do cartão.
+- [ ] Como usuário, quero aumentar o limite do cartão.
 
 ### Histórias de usuário atribuídas a Vanderson Guimarães
 - [ ] Como usuário, quero poder fazer login para acessar minha conta com segurança.
