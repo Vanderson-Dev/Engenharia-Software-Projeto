@@ -71,11 +71,11 @@ Responsável: Davi Torres
 
 Tarefas:
 
--Criar interface para escolha de investimento
+- Criar interface para escolha de investimento [Vanderson Guimarães]
 
--Implementar lógica de rendimento e resgate
+- Implementar lógica de rendimento e resgate [William Andrade]
 
--Integrar com banco de dados para registro
+- Integrar com banco de dados para registro [Vanderson Guimarães]
 
 ### História 5: Depósito de dinheiro na conta
 
@@ -83,11 +83,11 @@ Responsável: Arthur Pinheiro
 
 Tarefas:
 
--Implementar funcionalidade de depósito
+- Implementar funcionalidade de depósito
 
--Validar transação e atualizar saldo do usuário
+- Validar transação e atualizar saldo do usuário
 
--Criar interface de confirmação de depósito
+- Criar interface de confirmação de depósito
 
 ### História 6: Solicitação de empréstimo
 
@@ -95,11 +95,11 @@ Responsável: Vanderson Guimarães / William Andrade
 
 Tarefas:
 
--Criar regras de aprovação para solicitação de crédito
+- Criar regras de aprovação para solicitação de crédito
 
--Desenvolver tela para cadastro de empréstimos
+- Desenvolver tela para cadastro de empréstimos
 
--Integrar sistema com cálculo de taxas e parcelas
+- Integrar sistema com cálculo de taxas e parcelas
 
 ### História 7: Criar uma Nova Conta
 
@@ -107,11 +107,11 @@ Responsável: Davi Torres / William Andrade
 
 Tarefas:
 
--Definir requisitos e campos necessários para cadastro
+- Definir requisitos e campos necessários para cadastro
 
--Criar interface para cadastro do usuário
+- Criar interface para cadastro do usuário
 
--Implementar a estrutura do banco de dados para armazenar as informações do cliente
+- Implementar a estrutura do banco de dados para armazenar as informações do cliente
 
 ### História 8: Exibir extrato detalhado
 
@@ -119,11 +119,11 @@ Responsável: Vanderson Guimarães / Davi Torres
 
 Tarefas:
 
--Criar a Interface de Exibição do Extrato.
+- Criar a Interface de Exibição do Extrato.
 
--Integrar com o Sistema de Transações.
+- Integrar com o Sistema de Transações.
 
--Definir Critérios de Exibição.
+- Definir Critérios de Exibição.
 
 ### História 9: Visualizar Valores das Ações com indicadores de variação
 
@@ -131,6 +131,6 @@ Responsável:
 
 Tarefas:
 
--Criar a interface de exibição das ações.
+- Criar a interface de exibição das ações.
 
--Configurar API externa para mostrar a cotação das ações
+- Configurar API externa para mostrar a cotação das ações
