@@ -29,11 +29,9 @@ O sistema permitirá que os usuários acessem suas contas por meio de login, vis
 - [ ] Como usuário, quero investir meu dinheiro em produtos financeiros (como CDB, LCI) para obter rentabilidade.
 - [ ] Como usuário, quero depositar dinheiro na minha conta para aumentar meu saldo e poder usá-lo para futuras transações.
 - [ ] Como usuário, quero solicitar um empréstimo para obter crédito e financiar meus projetos pessoais.
-- [ ] Como gerente, quero analisar o perfil de crédito dos clientes e aprovar ou rejeitar solicitações de empréstimo baseada no histórico do cliente.
 - [ ] Como usuário, quero visualizar um extrato detalhado com todas as minhas transações.
-- [ ] Como usuário, quero visualizar os valores das ações, acompanhados de indicadores que mostrem se elas tiveram queda ou aumento.
-- [ ] Como gerente, quero visualizar todas as interações do cliente (transações, empréstimos).
 - [ ] Como usuário, quero criar uma nova conta, inserindo minhas informações pessoais.
+- [ ] Como usuário, quero visualizar os valores das ações, acompanhados de indicadores que mostrem se elas tiveram queda ou aumento.
 
 ## Backlog da Sprint
 
@@ -103,17 +101,17 @@ Tarefas:
 
 -Integrar sistema com cálculo de taxas e parcelas
 
-### História 7: Analise de solicitações de empréstimo
+### História 7: Criar uma Nova Conta
 
-Responsável: Davi Torres
+Responsável: Davi Torres / William Andrade
 
 Tarefas:
 
--Definir critérios de avaliação de crédito.
+-Definir requisitos e campos necessários para cadastro
 
--Criar painel de visualização para as diversas solicitações de empréstimo.
+-Criar interface para cadastro do usuário
 
--Implementar funcionalidade de aprovação e rejeição de solicitações.
+-Implementar a estrutura do banco de dados para armazenar as informações do cliente
 
 ### História 8: Exibir extrato detalhado
 
@@ -127,4 +125,12 @@ Tarefas:
 
 -Definir Critérios de Exibição.
 
-### História 9: 
+### História 9: Visualizar Valores das Ações com indicadores de variação
+
+Responsável:
+
+Tarefas:
+
+-Criar a interface de exibição das ações.
+
+-Configurar API externa para mostrar a cotação das ações
