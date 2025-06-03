@@ -30,6 +30,7 @@ Adicionar aqui o tema do trabalho
 - [ ] Como usuário, quero visualizar um extrato detalhado com todas as minhas transações.
 - [ ] Como usuário, quero visualizar os valores das ações, acompanhados de indicadores que mostrem se elas tiveram queda ou aumento.
 - [ ] Como gerente, quero visualizar todas as interações do cliente (transações, empréstimos).
+- [ ] Como usuário, quero criar uma nova conta, inserindo minhas informações pessoais.
 
 ## Backlog da Sprint
 
