@@ -2,7 +2,10 @@
 ![Badge opcional](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
 
 ## Escopo/Objetivo do Sistema
-Adicionar aqui o tema do trabalho
+
+Este projeto tem como objetivo o desenvolvimento de um sistema de Internet Banking que permita aos usuários realizarem operações bancárias de forma digital, segura e acessível. A plataforma será desenvolvida com foco na experiência do usuário, segurança da informação e funcionalidade, oferecendo um ambiente confiável para o gerenciamento de contas pessoais.
+
+O sistema permitirá que os usuários acessem suas contas por meio de login autenticado, visualizem informações como saldo, dados pessoais e histórico de transações, além de possibilitar a atualização de seus dados cadastrais.
 
 ## Membros da equipe e papel
 
@@ -20,9 +23,9 @@ Adicionar aqui o tema do trabalho
 
 ## Backlog do Produto
 
+- [ ] Como usuário, quero poder fazer login para acessar minha conta com segurança.
 - [ ] Como usuário, quero fazer transferências bancárias para movimentar meu dinheiro entre contas.
 - [ ] Como usuário, quero aumentar o limite do cartão.
-- [ ] Como usuário, quero poder fazer login para acessar minha conta com segurança.
 - [ ] Como usuário, quero investir meu dinheiro em produtos financeiros (como CDB, LCI) para obter rentabilidade.
 - [ ] Como usuário, quero depositar dinheiro na minha conta para aumentar meu saldo e poder usá-lo para futuras transações.
 - [ ] Como usuário, quero solicitar um empréstimo para obter crédito e financiar meus projetos pessoais.
