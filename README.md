@@ -45,7 +45,7 @@ Tarefas e responsáveis:
 
 - Criar tela de login com HTML/CSS [William Andrade]
 
-- ### História 2: Como usuário, quero fazer transferências bancárias para movimentar meu dinheiro entre contas.
+### História 2: Como usuário, quero fazer transferências bancárias para movimentar meu dinheiro entre contas.
 
 Tarefas e responsáveis:
 
@@ -55,7 +55,7 @@ Tarefas e responsáveis:
 
 - Registrar histórico de transações [Weder]
 
-- ### História 3: Como usuário, quero aumentar o limite do cartão.
+### História 3: Como usuário, quero aumentar o limite do cartão.
 
 Tarefas e responsáveis:
 
@@ -65,11 +65,9 @@ Tarefas e responsáveis:
 
 - Exibir notificações ao usuário sobre aprovação ou recusa [William Andrade]
 
- - ### História 4: Investimentos financeiros (CDB, LCI)
+### História 4: Investimentos financeiros (CDB, LCI)
 
-Responsável: Davi Torres
-
-Tarefas:
+Tarefas e responsáveis:
 
 - Criar interface para escolha de investimento [Vanderson Guimarães]
 
@@ -79,9 +77,7 @@ Tarefas:
 
 ### História 5: Depósito de dinheiro na conta
 
-Responsável: Arthur Pinheiro
-
-Tarefas:
+Tarefas e responsáveis:
 
 - Implementar funcionalidade de depósito
 
@@ -91,9 +87,7 @@ Tarefas:
 
 ### História 6: Solicitação de empréstimo
 
-Responsável: Vanderson Guimarães / William Andrade
-
-Tarefas:
+Tarefas e responsáveis:
 
 - Criar regras de aprovação para solicitação de crédito
 
@@ -103,9 +97,7 @@ Tarefas:
 
 ### História 7: Criar uma Nova Conta
 
-Responsável: Davi Torres / William Andrade
-
-Tarefas:
+Tarefas e responsáveis:
 
 - Definir requisitos e campos necessários para cadastro
 
@@ -115,9 +107,7 @@ Tarefas:
 
 ### História 8: Exibir extrato detalhado
 
-Responsável: Vanderson Guimarães / Davi Torres
-
-Tarefas:
+Tarefas e responsáveis:
 
 - Criar a Interface de Exibição do Extrato.
 
@@ -127,9 +117,7 @@ Tarefas:
 
 ### História 9: Visualizar Valores das Ações com indicadores de variação
 
-Responsável:
-
-Tarefas:
+Tarefas e responsáveis:
 
 - Criar a interface de exibição das ações.
 
