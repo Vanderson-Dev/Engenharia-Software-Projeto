@@ -3,11 +3,13 @@ Adicionar aqui o tema do trabalho
 
 ### Membros da equipe e papel
 
-- Arthur Pinheiro[Back-End]
-- Davi Torres[Back-End/Banco de Dados]
-- Vanderson Guimarães[Full-Stack]
-- Weder[Back-End]
-- William Andrade[Full-Stack]
+- Arthur Pinheiro [Back-End]
+- Davi Torres [Back-End/Banco de Dados]
+- Vanderson Guimarães [Full-Stack]
+- Weder [Back-End]
+- William Andrade [Full-Stack]
+
+-----------------------------------------------------------------------------------------
 
 ### Tecnologias Utilizadas
 
@@ -28,41 +30,35 @@ Adicionar aqui o tema do trabalho
 
 ### Backlog da Sprint
 
-# Implementação de transferência bancária
+- # História 1: Como usuário, quero fazer transferências bancárias para movimentar meu dinheiro entre contas.
 
-Responsável: Arthur Pinheiro / Weder
+Tarefas e responsáveis:
 
-Tarefas:
+- Criar lógica para transferência entre contas [Arthur Pinheiro]
 
-- Criar lógica para transferência entre contas
+- Validar saldo disponível antes da operação [Arthur Pinheiro]
 
-- Validar saldo disponível antes da operação
+- Registrar histórico de transações [Weder]
 
-- Registrar histórico de transações
+- # História 2: Como usuário, quero aumentar o limite do cartão.
 
-# Aumento de limite do cartão
+Tarefas e responsáveis:
 
-Responsável: Davi Torres
+- Criar regras para aprovação de aumento de limite [Davi Torres]
 
-Tarefas:
+- Implementar comunicação com banco de dados [Vanderson Guimarães]
 
-Criar regras para aprovação de aumento de limite
+- Exibir notificações ao usuário sobre aprovação ou recusa [William Andrade]
 
-Implementar comunicação com banco de dados
+- # História 3: Como usuário, quero poder fazer login para acessar minha conta com segurança.
 
-Exibir notificações ao usuário sobre aprovação ou recusa
+Tarefas e responsáveis:
 
-Sistema de login
+- Desenvolver autenticação de usuário (e-mail/senha) [Vanderson Guimarães]
 
-Responsável: Vanderson Guimarães / William Andrade
+- Implementar proteção contra acessos não autorizados [Vanderson Guimarães]
 
-Tarefas:
-
-Desenvolver autenticação de usuário (e-mail/senha)
-
-Implementar proteção contra acessos não autorizados
-
-Criar tela de login com HTML/CSS
+- Criar tela de login com HTML/CSS [William Andrade]
 
 Investimentos financeiros (CDB, LCI)
 
