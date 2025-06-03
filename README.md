@@ -38,7 +38,7 @@ O sistema permitirá que os usuários acessem suas contas por meio de login, vis
 
 Tarefas e responsáveis:
 
-- Desenvolver autenticação de usuário (e-mail/senha) [Vanderson Guimarães]
+- Desenvolver autenticação de usuário (e-mail/senha) [Davi Torres]
 
 - Implementar proteção contra acessos não autorizados [Vanderson Guimarães]
 
@@ -72,7 +72,7 @@ Tarefas e responsáveis:
 
 - Implementar lógica de rendimento e resgate [William Andrade]
 
-- Integrar com banco de dados para registro [Vanderson Guimarães]
+- Integrar com banco de dados para registro [Davi Torres]
 
 ### História 5: Como usuário, quero depositar dinheiro na minha conta para aumentar meu saldo e poder usá-lo para futuras transações.
 
