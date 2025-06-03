@@ -1,5 +1,15 @@
-###Backlog Produto
-### Histórias de Usuário
+### Escopo do Sistema
+Adicionar aqui o tema do trabalho
+
+### Membros da equipe e papel
+
+Adicionar aqui o que cada integrante irá executar
+
+### Tecnologias Utilizadas
+
+Adicionar quais tecnologias serão utilizadas no Trabalho (linguagem, frameworks e BD)
+
+### Backlog da Sprint
 
 ### Histórias de usuário atribuídas a Arthur Pinheiro
 - [ ] Como usuário, quero fazer transferências bancárias para movimentar meu dinheiro entre contas.
@@ -17,3 +27,5 @@
 
 ### Histórias de usuário atribuídas a Weder
 - [ ] 
+
+###Backlog Produto
