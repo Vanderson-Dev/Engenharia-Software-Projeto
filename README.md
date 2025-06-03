@@ -30,12 +30,11 @@ O sistema permitirá que os usuários acessem suas contas por meio de login, vis
 - [ ] Como usuário, quero depositar dinheiro na minha conta para aumentar meu saldo e poder usá-lo para futuras transações.
 - [ ] Como usuário, quero solicitar um empréstimo para obter crédito e financiar meus projetos pessoais.
 - [ ] Como usuário, quero visualizar um extrato detalhado com todas as minhas transações.
-- [ ] Como usuário, quero criar uma nova conta, inserindo minhas informações pessoais.
 - [ ] Como usuário, quero visualizar os valores das ações, acompanhados de indicadores que mostrem se elas tiveram queda ou aumento.
 
 ## Backlog da Sprint
 
-- ### História 1: Como usuário, quero poder fazer login para acessar minha conta com segurança.
+### História 1: Como usuário, quero poder fazer login para acessar minha conta com segurança.
 
 Tarefas e responsáveis:
 
@@ -65,7 +64,7 @@ Tarefas e responsáveis:
 
 - Exibir notificações ao usuário sobre aprovação ou recusa [William Andrade]
 
-### História 4: Investimentos financeiros (CDB, LCI)
+### História 4: Como usuário, quero investir meu dinheiro em produtos financeiros (como CDB, LCI) para obter rentabilidade
 
 Tarefas e responsáveis:
 
@@ -75,50 +74,40 @@ Tarefas e responsáveis:
 
 - Integrar com banco de dados para registro [Vanderson Guimarães]
 
-### História 5: Depósito de dinheiro na conta
+### História 5: Como usuário, quero depositar dinheiro na minha conta para aumentar meu saldo e poder usá-lo para futuras transações.
 
 Tarefas e responsáveis:
 
-- Implementar funcionalidade de depósito
+- Implementar funcionalidade de depósito [Arthur Pinheiro]
 
-- Validar transação e atualizar saldo do usuário
+- Validar transação e atualizar saldo do usuário [Vanderson Guimarães]
 
-- Criar interface de confirmação de depósito
+- Criar interface de confirmação de depósito [William Andrade]
 
-### História 6: Solicitação de empréstimo
-
-Tarefas e responsáveis:
-
-- Criar regras de aprovação para solicitação de crédito
-
-- Desenvolver tela para cadastro de empréstimos
-
-- Integrar sistema com cálculo de taxas e parcelas
-
-### História 7: Criar uma Nova Conta
+### História 6: Como usuário, quero solicitar um empréstimo para obter crédito e financiar meus projetos pessoais.
 
 Tarefas e responsáveis:
 
-- Definir requisitos e campos necessários para cadastro
+- Criar regras de aprovação para solicitação de crédito [Arthur Pinheiro]
 
-- Criar interface para cadastro do usuário
+- Desenvolver tela para cadastro de empréstimos [Vanderson Guimarães]
 
-- Implementar a estrutura do banco de dados para armazenar as informações do cliente
+- Integrar sistema com cálculo de taxas e parcelas [Weder]
 
-### História 8: Exibir extrato detalhado
-
-Tarefas e responsáveis:
-
-- Criar a Interface de Exibição do Extrato.
-
-- Integrar com o Sistema de Transações.
-
-- Definir Critérios de Exibição.
-
-### História 9: Visualizar Valores das Ações com indicadores de variação
+### História 7: Como usuário, quero visualizar um extrato detalhado com todas as minhas transações.
 
 Tarefas e responsáveis:
 
-- Criar a interface de exibição das ações.
+- Criar a Interface de Exibição do Extrato. [William Andrade]
 
-- Configurar API externa para mostrar a cotação das ações
+- Integrar com o Sistema de Transações. [Arthur Pinheiro]
+
+- Definir Critérios de Exibição. [Davi Torres]
+
+### História 8: Como usuário, quero visualizar os valores das ações, acompanhados de indicadores que mostrem se elas tiveram queda ou aumento.
+
+Tarefas e responsáveis:
+
+- Criar a interface de exibição das ações. [William Andrade]
+
+- Configurar API externa para mostrar a cotação das ações [Vanderson Guimarães]
