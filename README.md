@@ -12,15 +12,12 @@ Adicionar aqui o tema do trabalho
 - Weder [Back-End]
 - William Andrade [Full-Stack]
 
------------------------------------------------------------------------------------------
-
 ## Tecnologias Utilizadas
 
 - HTML/CSS
 - Python
 - MySQL
 
------------------------------------------------------------------------------------------
 ## Backlog do Produto
 
 - [ ] Como usuário, quero fazer transferências bancárias para movimentar meu dinheiro entre contas.
@@ -69,11 +66,11 @@ Responsável: Davi Torres
 
 Tarefas:
 
-Criar interface para escolha de investimento
+-Criar interface para escolha de investimento
 
-Implementar lógica de rendimento e resgate
+-Implementar lógica de rendimento e resgate
 
-Integrar com banco de dados para registro
+-Integrar com banco de dados para registro
 
 ### História 5: Depósito de dinheiro na conta
 
@@ -81,11 +78,11 @@ Responsável: Arthur Pinheiro
 
 Tarefas:
 
-Implementar funcionalidade de depósito
+-Implementar funcionalidade de depósito
 
-Validar transação e atualizar saldo do usuário
+-Validar transação e atualizar saldo do usuário
 
-Criar interface de confirmação de depósito
+-Criar interface de confirmação de depósito
 
 ### História 6: Solicitação de empréstimo
 
@@ -93,8 +90,8 @@ Responsável: Vanderson Guimarães / William Andrade
 
 Tarefas:
 
-Criar regras de aprovação para solicitação de crédito
+-Criar regras de aprovação para solicitação de crédito
 
-Desenvolver tela para cadastro de empréstimos
+-Desenvolver tela para cadastro de empréstimos
 
-Integrar sistema com cálculo de taxas e parcelas
+-Integrar sistema com cálculo de taxas e parcelas
