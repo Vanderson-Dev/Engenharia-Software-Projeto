@@ -1,11 +1,11 @@
 # Plataforma Web para Internet Banking
 ![Badge opcional](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
 
-## Escopo/Objetivo do Sistema
+## Objetivo do Sistema
 
-Este projeto tem como objetivo o desenvolvimento de um sistema de Internet Banking que permita aos usuários realizarem operações bancárias de forma digital, segura e acessível. A plataforma será desenvolvida com foco na experiência do usuário, segurança da informação e funcionalidade, oferecendo um ambiente confiável para o gerenciamento de contas pessoais.
+Este projeto tem como objetivo o desenvolvimento de um sistema de Internet Banking que permita aos usuários realizarem operações bancárias de forma digital e acessível. A plataforma será desenvolvida com foco na experiência do usuário e funcionalidades, oferecendo um ambiente confiável para o gerenciamento de contas pessoais.
 
-O sistema permitirá que os usuários acessem suas contas por meio de login autenticado, visualizem informações como saldo, dados pessoais e histórico de transações, além de possibilitar a atualização de seus dados cadastrais.
+O sistema permitirá que os usuários acessem suas contas por meio de login, visualizem informações como saldo, dados pessoais, histórico de transações, empréstimos, além de possibilitar a realização de investimentos em produtos financeiros, além de possibilitar a atualização de seus dados cadastrais.
 
 ## Membros da equipe e papel
 
