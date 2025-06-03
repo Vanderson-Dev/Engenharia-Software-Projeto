@@ -1,7 +1,10 @@
-### Escopo do Sistema
+# Plataforma Web para Internet Banking
+![Badge opcional](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
+
+## Escopo/Objetivo do Sistema
 Adicionar aqui o tema do trabalho
 
-### Membros da equipe e papel
+## Membros da equipe e papel
 
 - Arthur Pinheiro [Back-End]
 - Davi Torres [Back-End/Banco de Dados]
@@ -11,14 +14,14 @@ Adicionar aqui o tema do trabalho
 
 -----------------------------------------------------------------------------------------
 
-### Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - HTML/CSS
 - Python
 - MySQL
 
 -----------------------------------------------------------------------------------------
-### Backlog do Produto
+## Backlog do Produto
 
 - [ ] Como usuário, quero fazer transferências bancárias para movimentar meu dinheiro entre contas.
 - [ ] Como usuário, quero aumentar o limite do cartão.
@@ -28,29 +31,9 @@ Adicionar aqui o tema do trabalho
 - [ ] Como usuário, quero solicitar um empréstimo para obter crédito e financiar meus projetos pessoais.
 - [ ] 
 
-### Backlog da Sprint
+## Backlog da Sprint
 
-- # História 1: Como usuário, quero fazer transferências bancárias para movimentar meu dinheiro entre contas.
-
-Tarefas e responsáveis:
-
-- Criar lógica para transferência entre contas [Arthur Pinheiro]
-
-- Validar saldo disponível antes da operação [Arthur Pinheiro]
-
-- Registrar histórico de transações [Weder]
-
-- # História 2: Como usuário, quero aumentar o limite do cartão.
-
-Tarefas e responsáveis:
-
-- Criar regras para aprovação de aumento de limite [Davi Torres]
-
-- Implementar comunicação com banco de dados [Vanderson Guimarães]
-
-- Exibir notificações ao usuário sobre aprovação ou recusa [William Andrade]
-
-- # História 3: Como usuário, quero poder fazer login para acessar minha conta com segurança.
+- ### História 1: Como usuário, quero poder fazer login para acessar minha conta com segurança.
 
 Tarefas e responsáveis:
 
@@ -60,7 +43,27 @@ Tarefas e responsáveis:
 
 - Criar tela de login com HTML/CSS [William Andrade]
 
-Investimentos financeiros (CDB, LCI)
+- ### História 2: Como usuário, quero fazer transferências bancárias para movimentar meu dinheiro entre contas.
+
+Tarefas e responsáveis:
+
+- Criar lógica para transferência entre contas [Arthur Pinheiro]
+
+- Validar saldo disponível antes da operação [Arthur Pinheiro]
+
+- Registrar histórico de transações [Weder]
+
+- ### História 3: Como usuário, quero aumentar o limite do cartão.
+
+Tarefas e responsáveis:
+
+- Criar regras para aprovação de aumento de limite [Davi Torres]
+
+- Implementar comunicação com banco de dados [Vanderson Guimarães]
+
+- Exibir notificações ao usuário sobre aprovação ou recusa [William Andrade]
+
+ - ### História 4: Investimentos financeiros (CDB, LCI)
 
 Responsável: Davi Torres
 
@@ -72,7 +75,7 @@ Implementar lógica de rendimento e resgate
 
 Integrar com banco de dados para registro
 
-Depósito de dinheiro na conta
+### História 5: Depósito de dinheiro na conta
 
 Responsável: Arthur Pinheiro
 
@@ -84,7 +87,7 @@ Validar transação e atualizar saldo do usuário
 
 Criar interface de confirmação de depósito
 
-Solicitação de empréstimo
+### História 6: Solicitação de empréstimo
 
 Responsável: Vanderson Guimarães / William Andrade
 
