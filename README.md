@@ -37,7 +37,7 @@ O sistema permitirá que os usuários acessem suas contas por meio de login, vis
 
 ## Backlog da Sprint
 
-### História 1: Como usuário, quero poder fazer login/cadastro para acessar minha conta.
+### História 1: Como usuário, quero poder fazer login para acessar minha conta com segurança.
 
 Tarefas e responsáveis:
 
