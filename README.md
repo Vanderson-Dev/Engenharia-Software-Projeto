@@ -31,6 +31,9 @@ O sistema permitirá que os usuários acessem suas contas por meio de login, vis
 - [ ] Como usuário, quero solicitar um empréstimo para obter crédito e financiar meus projetos pessoais.
 - [ ] Como usuário, quero visualizar um extrato detalhado com todas as minhas transações.
 - [ ] Como usuário, quero visualizar os valores das ações, acompanhados de indicadores que mostrem se elas tiveram queda ou aumento.
+- [ ] Como usuário, quero poder atualizar meus dados pessoais e da conta.
+- [ ] Como usuário, quero solicitar um novo cartão caso o atual esteja vencido, perdido ou danificado.
+
 
 ## Backlog da Sprint
 
@@ -111,3 +114,23 @@ Tarefas e responsáveis:
 - Criar a interface de exibição das ações. [William Andrade]
 
 - Configurar API externa para mostrar a cotação das ações [Vanderson Guimarães]
+
+### História 9 : Atualização de dados pessoais e da conta
+
+Tarefas e responsáveis:
+
+- Criar interface para edição dos dados cadastrais 
+
+- Implementar validações de campos obrigatórios e formatos (ex: CPF, e-mail, telefone) 
+
+- Atualizar informações no banco de dados de forma segura
+
+### História 10 : Solicitação de um novo cartão
+
+Tarefas e responsáveis:
+
+- Criar formulário de solicitação de novo cartão com motivo 
+
+- Implementar regras de elegibilidade e limites de solicitação
+
+- Notificar o usuário sobre o status da solicitação
