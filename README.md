@@ -31,8 +31,8 @@ O sistema permitirá que os usuários acessem suas contas por meio de login, vis
 - [ ] Como usuário, quero solicitar um empréstimo para obter crédito e financiar meus projetos pessoais.
 - [ ] Como usuário, quero visualizar um extrato detalhado com todas as minhas transações.
 - [ ] Como usuário, quero visualizar os valores das ações, acompanhados de indicadores que mostrem se elas tiveram queda ou aumento.
-- [ ] Como usuário, quero poder atualizar meus dados pessoais e da conta.
 - [ ] Como usuário, quero solicitar um novo cartão caso o atual esteja vencido, perdido ou danificado.
+- [ ] Como usuário, quero acessar uma seção de perguntas frequentes para tirar dúvidas comuns sem precisar de atendimento.
 
 
 ## Backlog da Sprint
@@ -121,22 +121,22 @@ Tarefas e responsáveis:
 
 - Configurar API externa para mostrar a cotação das ações [Vanderson Guimarães]
 
-### História 9 : Atualização de dados pessoais e da conta
+### História 9 : Como usuário, quero solicitar um novo cartão caso o atual esteja vencido, perdido ou danificado.
 
 Tarefas e responsáveis:
 
-- Criar interface para edição dos dados cadastrais 
+- Criar formulário de solicitação de novo cartão com motivo [William Andrade]
 
-- Implementar validações de campos obrigatórios e formatos (ex: CPF, e-mail, telefone) 
+- Implementar regras de elegibilidade e limites de solicitação [Weder]
 
-- Atualizar informações no banco de dados de forma segura
+- Notificar o usuário sobre o status da solicitação [Arthur Pinheiro]
 
-### História 10 : Solicitação de um novo cartão
+### História 10: Como usuário, quero acessar uma seção de perguntas frequentes para tirar dúvidas comuns sem precisar de atendimento.
 
-Tarefas e responsáveis:
+- Criar interface clara e acessível com categorias de perguntas frequentes [Arthur Pinheiro]
 
-- Criar formulário de solicitação de novo cartão com motivo 
+- Implementar função de busca por palavras-chave no FAQ [Vanderson Guimarães]
 
-- Implementar regras de elegibilidade e limites de solicitação
+- Implementar sistema de feedback do tipo “Essa resposta foi útil?” [Weder]
 
-- Notificar o usuário sobre o status da solicitação
+
