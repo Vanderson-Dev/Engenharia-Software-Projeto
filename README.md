@@ -121,7 +121,7 @@ Tarefas e responsáveis:
 
 - Configurar API externa para mostrar a cotação das ações [Vanderson Guimarães]
 
-### História 9 : Solicitação de um novo cartão
+### História 9 : Como usuário, quero solicitar um novo cartão caso o atual esteja vencido, perdido ou danificado.
 
 Tarefas e responsáveis:
 
@@ -131,7 +131,7 @@ Tarefas e responsáveis:
 
 - Notificar o usuário sobre o status da solicitação [Arthur Pinheiro]
 
-### História 10: Acesso ao FAQ (Perguntas Frequentes)
+### História 10: Como usuário, quero acessar uma seção de perguntas frequentes para tirar dúvidas comuns sem precisar de atendimento.
 
 - Criar interface clara e acessível com categorias de perguntas frequentes [Arthur Pinheiro]
 
