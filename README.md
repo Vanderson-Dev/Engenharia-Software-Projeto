@@ -37,15 +37,21 @@ O sistema permitirá que os usuários acessem suas contas por meio de login, vis
 
 ## Backlog da Sprint
 
-### História 1: Como usuário, quero poder fazer login para acessar minha conta com segurança.
+### História 1: Como usuário, quero poder fazer login/cadastro para acessar minha conta.
 
 Tarefas e responsáveis:
 
 - Desenvolver autenticação de usuário (e-mail/senha) [Davi Torres]
 
-- Implementar proteção contra acessos não autorizados [Vanderson Guimarães]
+- Implementar validações de campos obrigatórios [Vanderson Guimarães]
 
-- Criar tela de login com HTML/CSS [William Andrade]
+- Criar tela de login de usuários com HTML/CSS [William Andrade]
+
+- Criar tela de cadastro de usuários com HTML/CSS [Vanderson Guimarães]
+
+- Criar tela de atualização de usuários com HTML/CS [William Andrade]
+
+- Criar tela de exclusãoo de usuários com HTML/CSS [Vanderson Guimarães]
 
 ### História 2: Como usuário, quero fazer transferências bancárias para movimentar meu dinheiro entre contas.
 
