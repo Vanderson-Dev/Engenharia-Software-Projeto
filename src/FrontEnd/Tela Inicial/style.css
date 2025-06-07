@@ -13,6 +13,7 @@ html{
 
 .container{
     max-width: 1080px;
+    height: 80px;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -24,7 +25,7 @@ html{
 }
 
 header{
-    background-color: black;
+    background-color: #dcc385;
     width: 100%;
     padding: 15px 4%;
     position: sticky;
@@ -46,7 +47,7 @@ header{
 }
 
 .menu nav a{
-    color: #c4c4c4;
+    color: #333;
     text-decoration: none;
     font-size: 18px;
     padding-right: 30px;
@@ -94,9 +95,30 @@ header{
     color: #ffffff;
 }
 
-.social button:hover{
-    transform: scale(0.9);
+/*========================================================*/
+.btn-link {
+    padding: 12px 25px;
+    background-color: #8B3A3A;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-left: 10px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
+
+.btn-link:hover {
+    background-color: #c0392b;
+    transform: scale(2.5); /* Expande o botão em 10% */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn-link:focus {
+    outline: none;
+    border: 2px solid #e74c3c;
+}
+/*===========================================================*/
 
 /* estilização do conteúdo */
 
