@@ -18,6 +18,7 @@ O sistema permitirá que os usuários acessem suas contas por meio de login, vis
 ## Tecnologias Utilizadas
 
 - HTML/CSS
+- javaScript
 - Python
 - MySQL
 
