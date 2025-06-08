@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solicitação de Novo Cartão</title>
+    <link rel="stylesheet" href="FormularioSolicitaCartao.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <div class="form-header">
+        <h1>Solicitação de Novo Cartão</h1>
+        <p>Preencha o formulário abaixo para solicitar um novo cartão</p>
+      </div>
+
+      <form id="cardRequestForm">
+        <div class="form-group">
+          <label for="fullName">Nome Completo</label>
+          <input type="text" id="fullName" name="fullName" required />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cpf">CPF</label>
+            <input
+              type="text"
+              id="cpf"
+              name="cpf"
+              placeholder="000.000.000-00"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="birthDate">Data de Nascimento</label>
+            <input type="date" id="birthDate" name="birthDate" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Tipo de Cartão</label>
+          <div class="card-types">
+            <div class="card-option" data-value="credito">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/196/196578.png"
+                alt="Crédito"
+              />
+              <p>Cartão de Crédito</p>
+            </div>
+            <div class="card-option" data-value="debito">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/196/196566.png"
+                alt="Débito"
+              />
+              <p>Cartão de Débito</p>
+            </div>
+            <div class="card-option" data-value="multiplo">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/196/196561.png"
+                alt="Débito/Crédito"
+              />
+              <p>Cartão Débito/Crédito</p>
+            </div>
+          </div>
+          <input type="hidden" id="cardType" name="cardType" required />
+        </div>
+
+        <div class="form-group">
+          <label for="reason">Motivo da Solicitação</label>
+          <select id="reason" name="reason" required>
+            <option value="" disabled selected>Selecione um motivo</option>
+            <option value="primeiro-cartao">Primeiro cartão</option>
+            <option value="segundo-cartao">Segundo cartão (adicional)</option>
+            <option value="substituicao">Substituição de cartão</option>
+            <option value="beneficios">Benefícios e vantagens</option>
+            <option value="outro">Outro motivo</option>
+          </select>
+        </div>
+
+        <div class="form-group" id="otherReasonGroup" style="display: none">
+          <label for="otherReason">Especifique o motivo</label>
+          <textarea id="otherReason" name="otherReason"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="additionalInfo">Informações Adicionais (opcional)</label>
+          <textarea
+            id="additionalInfo"
+            name="additionalInfo"
+            placeholder="Alguma informação que considere relevante para sua solicitação"
+          ></textarea>
+        </div>
+
+        <button type="submit" class="submit-button">Enviar Solicitação</button>
+
+        <div id="statusMessage" class="status-message"></div>
+      </form>
+    </div>
+
+    <script src="FormularioSolicitaCartao.js"></script>
+  </body>
+</html>
