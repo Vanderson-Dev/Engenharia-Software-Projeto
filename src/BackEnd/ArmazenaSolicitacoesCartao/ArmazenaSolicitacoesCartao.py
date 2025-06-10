@@ -15,10 +15,11 @@ CORS(app)
 
 # Configuração do MySQL
 db_config = {
-    'host': os.getenv('DB_HOST', 'localhost'),
+    'host': os.getenv('DB_HOST', 'switchback.proxy.rlwy.net'),
     'user': os.getenv('DB_USER', 'root'),
-    'password': os.getenv('DB_PASSWORD', ''),
-    'database': os.getenv('DB_NAME', 'banco_digital')
+    'password': os.getenv('DB_PASSWORD', 'RxrFzneigIEmxTWcZWTlaaPGeaTbeehl'),
+    'database': os.getenv('DB_NAME', 'railway'),
+    'port': int(os.getenv('DB_PORT', 14474))  
 }
 
 def get_db_connection():
