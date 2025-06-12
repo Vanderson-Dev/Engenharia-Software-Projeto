@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.dashboard {
+  background-color: white;
+  border: 1px solid #dcc385;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  max-width: 900px;
+  width: 100%;
+}
+
+header h1 {
+  text-align: center;
+  color: #dcc385;
+  margin-bottom: 2rem;
+}
+
+.saldo-container {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.saldo-container h2 {
+  color: #dcc385;
+  margin-bottom: 1rem;
+}
+
+.saldo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fdfaf3;
+  border: 2px solid #dcc385;
+  border-radius: 12px;
+  padding: 1rem 2rem;
+}
+
+.valor {
+  font-size: 2.5rem;
+  color: #dcc385;
+}
+
+.acoes-container h2 {
+  text-align: center;
+  color: #dcc385;
+  margin-bottom: 1.5rem;
+}
+
+.botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.submit-btn {
+  flex: 1 1 150px;
+  min-width: 120px;
+  height: 120px;
+  border: none;
+  border-radius: 10px;
+  background-color: #dcc385;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.submit-btn:hover {
+  background-color: #c9b070;
+  transform: scale(1.05);
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .submit-btn {
+    height: 100px;
+    font-size: 0.9rem;
+  }
+
+  .valor {
+    font-size: 2rem;
+  }
+}
