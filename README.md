@@ -10,6 +10,7 @@ O sistema permitirá que os usuários acessem suas contas por meio de login, vis
 ## Membros da equipe e papel
 
 - Arthur Pinheiro [Back-End]
+- Bruno Henrique [Full-Stack]
 - Davi Torres [Back-End/Banco de Dados]
 - Vanderson Guimarães [Full-Stack]
 - Weder [Back-End]
