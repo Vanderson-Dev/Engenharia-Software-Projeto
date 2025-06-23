@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fatura do Cartão</title>
+  <link rel="stylesheet" href="FaturaCartao.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Fatura do Cartão</h1>
+      <div class="cartao-info">
+        <span>Cartão Final 1234</span>
+        <span>Crédito</span>
+        <span>Válido até 05/2026</span>
+      </div>
+    </header>
+
+    <section class="resumo-fatura">
+      <h2>Resumo da Fatura</h2>
+      <div class="info-item">
+        <span>Valor total:</span>
+        <span class="valor">R$ 1.245,90</span>
+      </div>
+      <div class="info-item">
+        <span>Data de vencimento:</span>
+        <span class="destaque">15/06/2024</span>
+      </div>
+      <div class="info-item">
+        <span>Status:</span>
+        <span class="status-pendente">Pendente</span>
+      </div>
+      <button class="btn-pagar">Pagar Fatura</button>
+    </section>
+
+    <section class="transacoes">
+      <h2>Transações</h2>
+      <div class="filtros">
+        <select>
+          <option>Todas as categorias</option>
+          <option>Alimentação</option>
+          <option>Transporte</option>
+          <option>Lazer</option>
+        </select>
+        <input type="month" value="2024-06">
+      </div>
+      
+      <div class="lista-transacoes">
+        <!-- Transação 1 -->
+        <div class="transacao">
+          <div class="detalhes">
+            <div class="data">10/06/2024</div>
+            <div class="estabelecimento">Supermercado Preço Bom</div>
+            <div class="categoria">Alimentação</div>
+          </div>
+          <div class="valor">-R$ 350,90</div>
+        </div>
+        
+        <!-- Transação 2 -->
+        <div class="transacao">
+          <div class="detalhes">
+            <div class="data">08/06/2024</div>
+            <div class="estabelecimento">Posto Shell</div>
+            <div class="categoria">Transporte</div>
+          </div>
+          <div class="valor">-R$ 200,00</div>
+        </div>
+        
+        <!-- Transação 3 -->
+        <div class="transacao">
+          <div class="detalhes">
+            <div class="data">05/06/2024</div>
+            <div class="estabelecimento">Restaurante Sabor Divino</div>
+            <div class="categoria">Lazer</div>
+          </div>
+          <div class="valor">-R$ 185,00</div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
