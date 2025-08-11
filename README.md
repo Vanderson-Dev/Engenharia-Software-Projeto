@@ -47,7 +47,9 @@ Tarefas e responsáveis:
 
 - Implementar validações de campos obrigatórios [Vanderson Guimarães]
 
-- Criar tela de login de usuários com HTML/CSS [William Andrade]
+- Criar tela de login de usuários com HTML/CSS [Vanderson Guimarães]
+  
+- Criar tela deskboard para navegação com HTML/CSS {Bruno Azevedo]
 
 - Criar tela de cadastro de usuários com HTML/CSS [Vanderson Guimarães]
 
@@ -79,7 +81,7 @@ Tarefas e responsáveis:
 
 Tarefas e responsáveis:
 
-- Criar interface para escolha de investimento [Vanderson Guimarães]
+- Criar interface para escolha de investimento [Bruno Azevedo]
 
 - Implementar lógica de rendimento e resgate [William Andrade]
 
@@ -93,7 +95,7 @@ Tarefas e responsáveis:
 
 - Validar transação e atualizar saldo do usuário [Vanderson Guimarães]
 
-- Criar interface de confirmação de depósito [William Andrade]
+- Criar interface de confirmação de depósito [Bruno Azevedo]
 
 ### História 6: Como usuário, quero solicitar um empréstimo para obter crédito e financiar meus projetos pessoais.
 
@@ -119,7 +121,7 @@ Tarefas e responsáveis:
 
 Tarefas e responsáveis:
 
-- Criar a interface de exibição das ações. [William Andrade]
+- Criar a interface de exibição das ações. [Bruno Azevedo]
 
 - Configurar API externa para mostrar a cotação das ações [Vanderson Guimarães]
 
@@ -135,7 +137,7 @@ Tarefas e responsáveis:
 
 ### História 10: Como usuário, quero acessar uma seção de perguntas frequentes para tirar dúvidas comuns sem precisar de atendimento.
 
-- Criar interface clara e acessível com categorias de perguntas frequentes [Arthur Pinheiro]
+- Criar interface clara e acessível com categorias de perguntas frequentes [Bruno Azevedo]
 
 - Implementar função de busca por palavras-chave no FAQ [Vanderson Guimarães]
 
