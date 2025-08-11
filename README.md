@@ -143,4 +143,8 @@ Tarefas e responsáveis:
 
 - Implementar sistema de feedback do tipo “Essa resposta foi útil?” [Weder]
 
+  ## Diagrama de Caso de Uso
+
+  (diagramaDeCasoDeUso.png)
+
 
