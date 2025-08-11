@@ -148,3 +148,35 @@ Tarefas e responsáveis:
 ![Diagrama de Caso de Uso](diagramaDeCasoDeUso.png)
 
 
+## Diagramas de Atividades
+- História 1: Como usuário, quero poder fazer login para acessar minha conta com segurança.
+![DiagramaAtividade_1](https://github.com/user-attachments/assets/a687868d-bcd1-4530-bde9-61ba1a8c80f9)
+
+- História 2: Como usuário, quero fazer transferências bancárias para movimentar meu dinheiro entre contas.
+![DiagramaAtividade_2](https://github.com/user-attachments/assets/1e958aa7-5e24-4e08-a743-413d73a74d53)
+
+- História 3: Como usuário, quero aumentar o limite do cartão.
+![DiagramaAtividade_3](https://github.com/user-attachments/assets/200dc35f-1476-4b92-bed6-13cb4fb63807)
+
+- História 4: Como usuário, quero investir meu dinheiro em produtos financeiros (como CDB, LCI) para obter rentabilidade.
+![DiagramaAtividade_4](https://github.com/user-attachments/assets/a40731b2-fc3e-490c-aab8-bfd25346aa61)
+
+- História 5: Como usuário, quero depositar dinheiro na minha conta para aumentar meu saldo e poder usá-lo para futuras transações.
+![DiagramaAtividade_5](https://github.com/user-attachments/assets/37cd1d3c-dd21-43b2-a0b8-de64a83b91cd)
+
+- História 6: Como usuário, quero solicitar um empréstimo para obter crédito e financiar meus projetos pessoais.
+![DiagramaAtividade_6](https://github.com/user-attachments/assets/a6f1b5d8-375c-4986-b650-5a0286008c96)
+
+- História 7: Como usuário, quero visualizar um extrato detalhado com todas as minhas transações.
+![DiagramaAtividade_7](https://github.com/user-attachments/assets/e8885605-1730-4f5f-8913-1a3396711efc)
+
+- História 8: Como usuário, quero visualizar os valores das ações, acompanhados de indicadores que mostrem se elas tiveram queda ou aumento.
+![DiagramaAtividade_8](https://github.com/user-attachments/assets/270c092c-b57e-4b7d-a904-22d09a95034d)
+
+- História 9 : Como usuário, quero solicitar um novo cartão caso o atual esteja vencido, perdido ou danificado.
+![DiagramaAtividade_9](https://github.com/user-attachments/assets/8bc7fbf9-7b70-4dc8-9387-ac813aff8d97)
+
+- História 10: Como usuário, quero acessar uma seção de perguntas frequentes para tirar dúvidas comuns sem precisar de atendimento.
+![DiagramaAtividade_10](https://github.com/user-attachments/assets/4809ea97-4294-4013-a34a-f3e7915e4b5a)
+
+
