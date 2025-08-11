@@ -145,6 +145,6 @@ Tarefas e responsáveis:
 
   ## Diagrama de Caso de Uso
 
-  (diagramaDeCasoDeUso.png)
+  ![Diagrama de Caso de Uso](diagramaDeCasoDeUso.png)
 
 
