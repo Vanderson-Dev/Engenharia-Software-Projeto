@@ -192,6 +192,11 @@ Tarefas e responsáveis:
 ![Tela de Cadastro](https://github.com/user-attachments/assets/09ae2311-fd74-44a8-b0e6-97c6a8db58a0)
 ### Solicitar Novo Cartão
 ![Solicitar Novo Cartão](https://github.com/user-attachments/assets/ad78a152-89d5-47b1-82b9-b23603ee8316)
-
-
-
+### Tela Dashboard
+![Tela Dashboard](https://github.com/user-attachments/assets/675635a0-4fc6-48c0-bd3d-99a2a21da147)
+### Tela Ações
+![Tela Ações](https://github.com/user-attachments/assets/62dae13e-0d4c-4a0e-8a90-1eee074f4398)
+### Tela Cadastro de Emprestimo
+![Tela Cadastro de Empréstimo](https://github.com/user-attachments/assets/af8eeb47-b241-472f-9699-dc966530b0a8)
+### Tela Escolha de Investimento
+![Tela Escolha Investimento](https://github.com/user-attachments/assets/0f510f0d-8585-4828-9289-c346c6c2147e)
