@@ -200,3 +200,14 @@ Tarefas e responsáveis:
 ![Tela Cadastro de Empréstimo](https://github.com/user-attachments/assets/af8eeb47-b241-472f-9699-dc966530b0a8)
 ### Tela Escolha de Investimento
 ![Tela Escolha Investimento](https://github.com/user-attachments/assets/0f510f0d-8585-4828-9289-c346c6c2147e)
+### Tela resumo de cartões
+<img width="1024" height="1200" alt="Meus_Cartões" src="https://github.com/user-attachments/assets/328f242f-4a8e-4906-9aa7-05c9a4dd6a13" />
+### Tela fatura de cartão
+<img width="949" height="1161" alt="Fatura_Cartão" src="https://github.com/user-attachments/assets/bd051a61-a081-45d0-b52b-7216a1a0a81e" />
+### Tela crédito aprovado
+<img width="1797" height="1399" alt="parabens_credito 1" src="https://github.com/user-attachments/assets/48b23904-001f-4a6d-a8d9-8609a01ffc3f" />
+### Tela crédito negada
+<img width="966" height="1287" alt="credit_rejected_screen 1" src="https://github.com/user-attachments/assets/44104f3f-182c-484b-974c-abbf23830816" />
+### Tela de transferência 
+<img width="966" height="1287" alt="credit_rejected_screen 3" src="https://github.com/user-attachments/assets/dd13f782-0ee1-4dd2-87a7-6291fac6ffe5" />
+
