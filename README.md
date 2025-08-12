@@ -147,6 +147,9 @@ Tarefas e responsáveis:
 
 ![Diagrama de Caso de Uso](diagramaDeCasoDeUso.png)
 
+## Diagrama de Classes
+
+![Diagrama de Classes](diagramaDeClasse.png)
 
 ## Diagramas de Atividades
 - História 1: Como usuário, quero poder fazer login para acessar minha conta com segurança.
