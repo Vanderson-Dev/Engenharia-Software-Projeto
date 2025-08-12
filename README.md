@@ -179,4 +179,9 @@ Tarefas e responsáveis:
 - História 10: Como usuário, quero acessar uma seção de perguntas frequentes para tirar dúvidas comuns sem precisar de atendimento.
 ![DiagramaAtividade_10](https://github.com/user-attachments/assets/4809ea97-4294-4013-a34a-f3e7915e4b5a)
 
+## Protótipos de Telas
+
+![Tela Inicial] <img width="581" height="845" alt="Vector" src="https://github.com/user-attachments/assets/9a74aaa2-2609-492d-a164-9fcc3fa628f8" />
+  
+
 
