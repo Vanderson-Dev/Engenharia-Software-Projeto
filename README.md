@@ -181,7 +181,14 @@ Tarefas e responsáveis:
 
 ## Protótipos de Telas
 
-![Tela Inicial] <img width="581" height="845" alt="Vector" src="https://github.com/user-attachments/assets/9a74aaa2-2609-492d-a164-9fcc3fa628f8" />
-  
+### Tela Inicial
+![Tela Inicial](https://github.com/user-attachments/assets/9a74aaa2-2609-492d-a164-9fcc3fa628f8)
+### Tela Login
+![Tela Login](https://github.com/user-attachments/assets/50e2cc8e-1234-4bd2-8b58-0c033d85f9e3)
+### Tela de Cadastro
+![Tela de Cadastro](https://github.com/user-attachments/assets/09ae2311-fd74-44a8-b0e6-97c6a8db58a0)
+### Solicitar Novo Cartão
+![Solicitar Novo Cartão](https://github.com/user-attachments/assets/ad78a152-89d5-47b1-82b9-b23603ee8316)
+
 
 
