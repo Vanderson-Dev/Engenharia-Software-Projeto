@@ -182,7 +182,7 @@ Tarefas e responsáveis:
 ## Protótipos de Telas
 
 ### Tela Inicial
-![Tela Inicial](https://github.com/user-attachments/assets/9a74aaa2-2609-492d-a164-9fcc3fa628f8)
+![Tela Inicial](https://github.com/user-attachments/assets/8d203224-f285-40ad-9af2-700914b55898)
 ### Tela Login
 ![Tela Login](https://github.com/user-attachments/assets/50e2cc8e-1234-4bd2-8b58-0c033d85f9e3)
 ### Tela de Cadastro
