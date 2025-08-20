@@ -19,6 +19,7 @@ app.register_blueprint(cartao_bp)
 if __name__ == '__main__':
     init_db()
     app.run(debug=True)
+# Consulta o saldo de uma conta pelo CPF
 @app.route('/api/consultar-saldo/<cpf>', methods=['GET'])
 def consultar_saldo(cpf):
     conta = Conta(cpf)
@@ -27,7 +28,8 @@ def consultar_saldo(cpf):
         return jsonify({'cpf': cpf, 'saldo': saldo}), 200
     else:
         return jsonify({'error': 'Cliente não encontrado'}), 404
-
+    
+# Realiza transferência entre contas
 @app.route('/api/transferir', methods=['POST'])
 def transferir():
     data = request.json
@@ -40,6 +42,16 @@ def transferir():
         return jsonify({'mensagem': mensagem}), 200
     else:
         return jsonify({'erro': mensagem}), 400
+
+# Realiza depósito em uma conta
+@app.route('/api/depositar', methods=['POST'])
+def depositar():
+    data = request.json
+    cpf = data.get('cpf')
+    valor = float(data.get('valor'))
+    conta = Conta(cpf)
+    conta.depositar(valor)
+    return jsonify({'mensagem': 'Depósito realizado com sucesso!'}), 200
 
 if __name__ == '__main__':
     app.run(debug=True)
