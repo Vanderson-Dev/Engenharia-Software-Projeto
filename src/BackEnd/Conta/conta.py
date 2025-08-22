@@ -1,4 +1,4 @@
-from .ArmazenaClienteBD import get_db_connection
+from ArmazenaClienteBD.ArmazenaClienteBD import get_db_connection
 
 class Conta:
     def __init__(self, cpf):
