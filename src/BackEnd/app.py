@@ -3,6 +3,7 @@ from flask_cors import CORS
 from Conta.conta import Conta
 from Transacao.transacao import Transacao
 from flask import request, jsonify
+from ArmazenaClienteBD.ArmazenaClienteBD import get_db_connection
 
 
 from authenticationFolder.authentication import login_bp
@@ -52,6 +53,35 @@ def depositar():
     conta = Conta(cpf)
     conta.depositar(valor)
     return jsonify({'mensagem': 'Depósito realizado com sucesso!'}), 200
+
+# Regra: só aprova se o cliente não tiver empréstimo ativo e o valor for até 5x o saldo
+
+@app.route('/api/solicitar-emprestimo', methods=['POST'])
+def solicitar_emprestimo():
+    data = request.json
+    cpf = data.get('cpf')
+    valor = float(data.get('valor'))
+
+    conta = Conta(cpf)
+    saldo = conta.consultar_saldo()
+
+    # regra: o valor do empréstimo não pode ser maior que 5x o saldo do cliente.
+    if saldo is None:
+        return jsonify({'erro': 'Cliente não encontrado'}), 404
+    if valor > saldo * 5:
+        return jsonify({'aprovado': False, 'motivo': 'Valor solicitado excede limite permitido'}), 400
+
+    
+
+    # Se aprovado, registre o empréstimo (exemplo, você pode criar uma tabela emprestimos)
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute("INSERT INTO emprestimos (cpf, valor, status) VALUES (%s, %s, %s)", (cpf, valor, 'aprovado'))
+    conn.commit()
+    cursor.close()
+    conn.close()
+
+    return jsonify({'aprovado': True, 'mensagem': 'Empréstimo aprovado!'}), 200
 
 if __name__ == '__main__':
     app.run(debug=True)

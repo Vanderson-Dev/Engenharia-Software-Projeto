@@ -29,10 +29,3 @@ class Conta:
         cursor.close()
         conn.close()
 
-    def depositar(self, valor):
-        conn = get_db_connection()
-        cursor = conn.cursor()
-        cursor.execute("UPDATE clientes SET saldo = saldo + %s WHERE cpf = %s", (valor, self.cpf))
-        conn.commit()
-        cursor.close()
-        conn.close()
