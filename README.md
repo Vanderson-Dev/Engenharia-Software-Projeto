@@ -143,4 +143,71 @@ Tarefas e responsáveis:
 
 - Implementar sistema de feedback do tipo “Essa resposta foi útil?” [Weder]
 
+## Diagrama de Caso de Uso
+
+![Diagrama de Caso de Uso](diagramaDeCasoDeUso.png)
+
+## Diagrama de Classes
+
+![Diagrama de Classes](diagramaDeClasse.png)
+
+## Diagramas de Atividades
+- História 1: Como usuário, quero poder fazer login para acessar minha conta com segurança.
+![DiagramaAtividade_1](https://github.com/user-attachments/assets/a687868d-bcd1-4530-bde9-61ba1a8c80f9)
+
+- História 2: Como usuário, quero fazer transferências bancárias para movimentar meu dinheiro entre contas.
+![DiagramaAtividade_2](https://github.com/user-attachments/assets/1e958aa7-5e24-4e08-a743-413d73a74d53)
+
+- História 3: Como usuário, quero aumentar o limite do cartão.
+![DiagramaAtividade_3](https://github.com/user-attachments/assets/200dc35f-1476-4b92-bed6-13cb4fb63807)
+
+- História 4: Como usuário, quero investir meu dinheiro em produtos financeiros (como CDB, LCI) para obter rentabilidade.
+![DiagramaAtividade_4](https://github.com/user-attachments/assets/a40731b2-fc3e-490c-aab8-bfd25346aa61)
+
+- História 5: Como usuário, quero depositar dinheiro na minha conta para aumentar meu saldo e poder usá-lo para futuras transações.
+![DiagramaAtividade_5](https://github.com/user-attachments/assets/37cd1d3c-dd21-43b2-a0b8-de64a83b91cd)
+
+- História 6: Como usuário, quero solicitar um empréstimo para obter crédito e financiar meus projetos pessoais.
+![DiagramaAtividade_6](https://github.com/user-attachments/assets/a6f1b5d8-375c-4986-b650-5a0286008c96)
+
+- História 7: Como usuário, quero visualizar um extrato detalhado com todas as minhas transações.
+![DiagramaAtividade_7](https://github.com/user-attachments/assets/e8885605-1730-4f5f-8913-1a3396711efc)
+
+- História 8: Como usuário, quero visualizar os valores das ações, acompanhados de indicadores que mostrem se elas tiveram queda ou aumento.
+![DiagramaAtividade_8](https://github.com/user-attachments/assets/270c092c-b57e-4b7d-a904-22d09a95034d)
+
+- História 9 : Como usuário, quero solicitar um novo cartão caso o atual esteja vencido, perdido ou danificado.
+![DiagramaAtividade_9](https://github.com/user-attachments/assets/8bc7fbf9-7b70-4dc8-9387-ac813aff8d97)
+
+- História 10: Como usuário, quero acessar uma seção de perguntas frequentes para tirar dúvidas comuns sem precisar de atendimento.
+![DiagramaAtividade_10](https://github.com/user-attachments/assets/4809ea97-4294-4013-a34a-f3e7915e4b5a)
+
+## Protótipos de Telas
+
+### Tela Inicial
+![Tela Inicial](https://github.com/user-attachments/assets/8d203224-f285-40ad-9af2-700914b55898)
+### Tela Login
+![Tela Login](https://github.com/user-attachments/assets/50e2cc8e-1234-4bd2-8b58-0c033d85f9e3)
+### Tela de Cadastro
+![Tela de Cadastro](https://github.com/user-attachments/assets/09ae2311-fd74-44a8-b0e6-97c6a8db58a0)
+### Solicitar Novo Cartão
+![Solicitar Novo Cartão](https://github.com/user-attachments/assets/ad78a152-89d5-47b1-82b9-b23603ee8316)
+### Tela Dashboard
+![Tela Dashboard](https://github.com/user-attachments/assets/675635a0-4fc6-48c0-bd3d-99a2a21da147)
+### Tela Ações
+![Tela Ações](https://github.com/user-attachments/assets/62dae13e-0d4c-4a0e-8a90-1eee074f4398)
+### Tela Cadastro de Emprestimo
+![Tela Cadastro de Empréstimo](https://github.com/user-attachments/assets/af8eeb47-b241-472f-9699-dc966530b0a8)
+### Tela Escolha de Investimento
+![Tela Escolha Investimento](https://github.com/user-attachments/assets/0f510f0d-8585-4828-9289-c346c6c2147e)
+### Tela resumo de cartões
+<img width="1024" height="1200" alt="Meus_Cartões" src="https://github.com/user-attachments/assets/328f242f-4a8e-4906-9aa7-05c9a4dd6a13" />
+### Tela fatura de cartão
+<img width="949" height="1161" alt="Fatura_Cartão" src="https://github.com/user-attachments/assets/bd051a61-a081-45d0-b52b-7216a1a0a81e" />
+### Tela crédito aprovado
+<img width="1797" height="1399" alt="parabens_credito 1" src="https://github.com/user-attachments/assets/48b23904-001f-4a6d-a8d9-8609a01ffc3f" />
+### Tela crédito negada
+<img width="966" height="1287" alt="credit_rejected_screen 1" src="https://github.com/user-attachments/assets/44104f3f-182c-484b-974c-abbf23830816" />
+### Tela de transferência 
+<img width="966" height="1287" alt="credit_rejected_screen 3" src="https://github.com/user-attachments/assets/dd13f782-0ee1-4dd2-87a7-6291fac6ffe5" />
 
