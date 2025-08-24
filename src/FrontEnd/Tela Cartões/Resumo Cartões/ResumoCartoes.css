@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.container {
+  background-color: white;
+  border: 1px solid #dcc385;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  color: #dcc385;
+}
+
+.cartao {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.cartao-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.tipo {
+  font-weight: bold;
+  color: #333;
+}
+
+.status {
+  font-weight: bold;
+}
+
+.ativo {
+  color: #2e7d32;
+}
+
+.bloqueado {
+  color: #c62828;
+}
+
+.cartao-info {
+  margin-bottom: 1rem;
+}
+
+.numero {
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.titular, .validade {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.limite {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.valor {
+  font-weight: bold;
+  color: #333;
+}
+
+.acoes {
+  display: flex;
+  gap: 1rem;
+}
+
+.acoes button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-fatura, .btn-extrato {
+  background-color: #dcc385;
+  color: white;
+}
+
+.btn-fatura:hover, .btn-extrato:hover {
+  background-color: #c9b070;
+}
+
+.btn-bloquear {
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd !important;
+}
+
+.btn-bloquear:hover {
+  background-color: #e0e0e0;
+}
+
+.btn-novo-cartao {
+  width: 100%;
+  padding: 12px;
+  background-color: transparent;
+  border: 2px solid #dcc385;
+  border-radius: 5px;
+  color: #dcc385;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-novo-cartao:hover {
+  background-color: #fdfaf3;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+  
+  .container {
+    padding: 1.5rem;
+  }
+  
+  .acoes {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
