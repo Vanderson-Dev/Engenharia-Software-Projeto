@@ -1,57 +1,51 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.querySelector("form");
+// Aguarda o HTML ser completamente carregado para executar o script
+document.addEventListener('DOMContentLoaded', function () {
 
-  form.addEventListener("submit", async function (e) {
-    e.preventDefault(); // Impede envio tradicional do formulário
+    // Seleciona o formulário e o elemento de mensagem
+    const form = document.querySelector('form');
+    const statusMessage = document.getElementById('status-message'); // Simplificado para pegar o div que já existe no HTML
 
-    // Coleta os dados do formulário
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
+    // Adiciona um "escutador" para o evento de submissão do formulário
+    form.addEventListener('submit', async function (event) {
+        // Impede que a página recarregue
+        event.preventDefault();
 
-    // Cria ou seleciona elemento de status (mensagem)
-    let statusMessage = document.getElementById("statusMessage");
-    if (!statusMessage) {
-      statusMessage = document.createElement("div");
-      statusMessage.id = "statusMessage";
-      statusMessage.className = "status-message";
-      form.appendChild(statusMessage);
-    }
+        // Esconde mensagens antigas antes de uma nova tentativa
+        statusMessage.textContent = '';
+        statusMessage.className = 'status-message';
 
-    statusMessage.style.display = "none";
+        // Coleta todos os dados dos campos do formulário
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
 
-    try {
-      // Simula envio para o backend
-      const response = await enviarParaBackend(data);
+        try {
+            // **MUDANÇA 1: URL correta da nossa API**
+            const response = await fetch('http://127.0.0.1:5000/api/cadastrar-cliente', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
 
-      statusMessage.textContent = "Cadastro realizado com sucesso!";
-      statusMessage.className = "status-message success";
-      statusMessage.style.display = "block";
+            // Pega a resposta do servidor em formato JSON
+            const result = await response.json();
 
-      form.reset(); // Limpa os campos
-      statusMessage.scrollIntoView({ behavior: "smooth" });
-    } catch (error) {
-      statusMessage.textContent = "Erro ao cadastrar. Tente novamente.";
-      statusMessage.className = "status-message error";
-      statusMessage.style.display = "block";
-      statusMessage.scrollIntoView({ behavior: "smooth" });
-    }
-  });
+            // Se a resposta do servidor não for 'ok' (ex: erro 409), ele entra no 'catch'
+            if (!response.ok) {
+                // **MUDANÇA 2: Usa a mensagem de erro vinda do back-end**
+                throw new Error(result.error || 'Erro ao processar a solicitação.');
+            }
 
-  async function enviarParaBackend(data) {
-    console.log("Dados a serem enviados:", data);
+            // **MUDANÇA 3: Usa a mensagem de sucesso vinda do back-end**
+            statusMessage.textContent = result.message;
+            statusMessage.className = 'status-message success';
+            form.reset(); // Limpa o formulário
 
-    const response = await fetch("http://localhost:5000/api/clientes", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
+        } catch (error) {
+            // Exibe a mensagem de erro (que foi jogada pelo 'throw' acima)
+            statusMessage.textContent = error.message;
+            statusMessage.className = 'status-message error';
+        }
     });
-
-    if (!response.ok) {
-      throw new Error("Erro na requisição");
-    }
-
-    return response.json();
-  }
 });
