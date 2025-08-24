@@ -1,12 +1,24 @@
-from ArmazenaClienteBD.ArmazenaClienteBD import get_db_connection
+import pymysql
 
+# Função de conexão
+def get_db_connection():
+    return pymysql.connect(
+        host="localhost",
+        port=3306,
+        user="root",
+        password="admin",
+        database="Banco",
+        cursorclass=pymysql.cursors.DictCursor  # Retorna resultados como dicionário
+    )
+
+# Classe Conta
 class Conta:
     def __init__(self, cpf):
         self.cpf = cpf
 
     def consultar_saldo(self):
         conn = get_db_connection()
-        cursor = conn.cursor(dictionary=True)
+        cursor = conn.cursor()
         cursor.execute("SELECT saldo FROM clientes WHERE cpf = %s", (self.cpf,))
         resultado = cursor.fetchone()
         cursor.close()
@@ -14,10 +26,9 @@ class Conta:
         return resultado['saldo'] if resultado else None
 
     def debitar(self, valor):
-        # Verifica se o saldo é suficiente antes de debitar
         saldo_atual = self.consultar_saldo()
         if saldo_atual is None or saldo_atual < valor:
-            return False  # Saldo insuficiente ou conta não encontrada
+            return False
         conn = get_db_connection()
         cursor = conn.cursor()
         cursor.execute("UPDATE clientes SET saldo = saldo - %s WHERE cpf = %s", (valor, self.cpf))
@@ -34,3 +45,16 @@ class Conta:
         cursor.close()
         conn.close()
 
+# Teste
+if __name__ == "__main__":
+    conta = Conta("12345678900")  # coloque um CPF válido que esteja na tabela clientes
+    
+    print("Saldo atual:", conta.consultar_saldo())
+    
+    if conta.debitar(100):
+        print("Débito realizado com sucesso!")
+    else:
+        print("Saldo insuficiente ou cliente não encontrado.")
+    
+    conta.creditar(400)
+    print("Saldo após crédito:", conta.consultar_saldo())
