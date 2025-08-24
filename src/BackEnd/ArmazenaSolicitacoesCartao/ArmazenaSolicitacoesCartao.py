@@ -1,24 +1,17 @@
 from flask import Blueprint, request, jsonify
-import mysql.connector
+import pymysql
 from datetime import datetime
-import os
-from dotenv import load_dotenv
-
-load_dotenv()
 
 cartao_bp = Blueprint('cartao', __name__)
 
-# Config do banco
-db_config = {
-    'host': os.getenv('DB_HOST', 'switchback.proxy.rlwy.net'),
-    'user': os.getenv('DB_USER', 'root'),
-    'password': os.getenv('DB_PASSWORD', 'RxrFzneigIEmxTWcZWTlaaPGeaTbeehl'),
-    'database': os.getenv('DB_NAME', 'railway'),
-    'port': int(os.getenv('DB_PORT', 14474))  
-}
-
 def get_db_connection():
-    return mysql.connector.connect(**db_config)
+    return pymysql.connect(
+        host="localhost",
+        user="root",
+        password="admin",
+        database="Banco",
+        cursorclass=pymysql.cursors.DictCursor
+    )
 
 def init_db():
     conn = get_db_connection()
@@ -47,12 +40,16 @@ def init_db():
 def solicitar_cartao():
     data = request.json
     required = ['fullName', 'cpf', 'birthDate', 'cardType', 'reason']
+    
     for campo in required:
         if not data.get(campo):
             return jsonify({'error': f'O campo {campo} é obrigatório'}), 400
+    
     if data['reason'] == 'outro' and not data.get('otherReason'):
         return jsonify({'error': 'Por favor, especifique o motivo da solicitação'}), 400
 
+    conn = None
+    cursor = None
     try:
         conn = get_db_connection()
         cursor = conn.cursor()
@@ -73,8 +70,11 @@ def solicitar_cartao():
         ))
         conn.commit()
         return jsonify({'message': 'Solicitação recebida com sucesso!'}), 201
-    except mysql.connector.Error:
+    except pymysql.MySQLError:
         return jsonify({'error': 'Erro ao processar solicitação'}), 500
     finally:
-        cursor.close()
-        conn.close()
+        if cursor:
+            cursor.close()
+        if conn:
+            conn.close()
+
