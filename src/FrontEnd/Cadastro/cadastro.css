@@ -7,7 +7,7 @@
 
 body {
   height: 100vh;
-  background-color: white;
+  background-color: rgb(252, 247, 235);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,7 +15,7 @@ body {
 }
 
 .form-container {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   padding: 2rem;
   border-radius: 15px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -45,7 +45,7 @@ body {
 .form-group select {  /* essa é a borda da caixa de entradas de dados*/
   width: 100%;
   padding: 0.6rem;
-  border: 1px solid #555;
+  border: 1px solid #dcc385;
   border-radius: 8px;
   background-color: #f9f9f9;
   color: #555;

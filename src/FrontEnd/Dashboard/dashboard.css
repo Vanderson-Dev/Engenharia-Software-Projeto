@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: white;
+  background-color: rgb(252, 247, 235);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,7 +36,7 @@ header h1 {
 }
 
 .saldo-container h2 {
-  color: #dcc385;
+  color: #333;
   margin-bottom: 1rem;
 }
 
@@ -81,7 +81,7 @@ header h1 {
 }
 
 .submit-btn:hover {
-  background-color: #0056b3; /* Mudar a cor azul quando aperta os botões */
+  background-color: #c9b070; /* Mudar a cor quando aperta os botões */
 }
 
 

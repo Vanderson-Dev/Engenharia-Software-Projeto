@@ -12,12 +12,12 @@ html {
 }
 
 body {
-    background-color: #f7f7f7;
+    background-color: rgb(252, 247, 235);
     min-height: 100vh;
 }
 
 header {
-    background-color: #dcc385;
+    background-color: #cfcdc3;
     width: 100%;
     padding: 15px 4%;
     position: sticky;
@@ -43,7 +43,7 @@ header {
 }
 
 .menu {
-    width: 50%;
+    width: 75%;
 }
 
 .menu nav a {
@@ -59,11 +59,12 @@ header {
     content: " ";
     width: 0px;
     height: 4px;
-    background-image: linear-gradient(45deg , #FF2500, #FF7100);
+    background-image: linear-gradient(45deg , #d3c783, #e9e6bc);
     position: absolute;
     bottom: 0;
     left: 0;
     transition: width 0.5s;
+    
 }
 
 .menu nav a:hover::after {
@@ -80,7 +81,7 @@ header {
 
 .btn-link {
     padding: 12px 25px;
-    background-color: #8B3A3A;
+    background-color: #dcc385;
     color: white;
     text-decoration: none;
     border-radius: 8px;
@@ -88,17 +89,20 @@ header {
     font-weight: bold;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
+    border: 1px solid #9c8b61;
 }
 
 .btn-link:hover {
     background-color: #c0392b;
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    
 }
 
 .btn-link:focus {
     outline: none;
     border: 2px solid #e74c3c;
+    
 }
 
 main {
@@ -112,7 +116,9 @@ main {
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    background-color: #f7f7f7;
+    background-color: rgb(252, 247, 235);
+    
+    
 }
 
 .container1 {
@@ -122,12 +128,15 @@ main {
     border-radius: 16px;
     box-shadow: 0 4px 16px rgba(0,0,0,0.08);
     padding: 32px 24px;
+    border: 1px solid #dcc385;
+    
+    
 }
 
 .transferencia-section h2 {
     font-size: 2em;
     margin-bottom: 25px;
-    color: #8B3A3A;
+    color: #dcc385;
     text-align: center;
 }
 
@@ -139,7 +148,7 @@ form {
 
 label {
     font-size: 1.1em;
-    color: #8B3A3A;
+    color: #dcc385;
     margin-bottom: 4px;
     font-weight: 600;
 }
@@ -152,17 +161,18 @@ input[type="number"] {
     font-size: 1em;
     transition: border-color 0.3s;
     background: #faf9f6;
+    
 }
 
 input[type="text"]:focus,
 input[type="number"]:focus {
-    border-color: #8B3A3A;
+    border-color: #dcc385;
     outline: none;
 }
 
 .submit-btn {
     padding: 12px 0;
-    background-color: #8B3A3A;
+    background-color: #dcc385;
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -171,6 +181,8 @@ input[type="number"]:focus {
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0,0,0,0.12);
     transition: background 0.3s, transform 0.2s;
+    
+    
 }
 
 .submit-btn:hover {
@@ -197,7 +209,7 @@ input[type="number"]:focus {
     margin-left: 20px;
 }
 .dashboard-btn {
-    background-color: #8B3A3A;
+    background-color: #dcc385;
     color: white;
     border: none;
     border-radius: 8px;
@@ -226,7 +238,7 @@ input[type="number"]:focus {
     flex-direction: column;
 }
 .dashboard-dropdown a {
-    color: #8B3A3A;
+    color: #dcc385;
     padding: 12px 20px;
     text-decoration: none;
     font-size: 1em;

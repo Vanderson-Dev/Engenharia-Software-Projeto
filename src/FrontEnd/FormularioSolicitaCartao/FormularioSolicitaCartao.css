@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: white;
+  background-color: rgb(252, 247, 235);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,7 +30,7 @@ body {
 }
 
 .form-header h1 {
-  color: #333;
+  color: #dcc385;
   margin-bottom: 10px;
 }
 
@@ -55,7 +55,7 @@ body {
 .form-group textarea {
   width: 100%;
   padding: 12px;
-  border: 1px solid #ddd;
+  border: 1px solid #dcc385;
   border-radius: 5px;
   font-size: 14px;
   transition: border 0.3s;

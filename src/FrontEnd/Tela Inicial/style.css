@@ -11,6 +11,10 @@ html{
     scroll-behavior: smooth;
 }
 
+html, body {
+    background-color: rgb(252, 247, 235);
+}
+
 .container{
     max-width: 1080px;
     height: 80px;
@@ -25,7 +29,7 @@ html{
 }
 
 header{
-    background-color: #dcc385;
+    background-color: #cfcdc3;
     width: 100%;
     padding: 15px 4%;
     position: sticky;
@@ -43,7 +47,7 @@ header{
 }
 
 .menu{
-    width: 50%;
+    width: 75%;
 }
 
 .menu nav a{
@@ -64,6 +68,7 @@ header{
     bottom: 0;
     left: 0;
     transition: width 0.5s;
+    
 }
 
 .menu nav a:hover::after{
@@ -98,7 +103,7 @@ header{
 /*========================================================*/
 .btn-link {
     padding: 12px 25px;
-    background-color: #8B3A3A;
+    background-color: #dcc385;
     color: white;
     text-decoration: none;
     border-radius: 8px;
@@ -106,6 +111,7 @@ header{
     font-weight: bold;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
+    border: 1px solid #9c8b61;
 }
 
 .btn-link:hover {
