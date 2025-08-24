@@ -1,17 +1,5 @@
-import pymysql
+from BancoDados.db import get_db_connection   # importa do pacote BancoDados
 
-# Função de conexão
-def get_db_connection():
-    return pymysql.connect(
-        host="localhost",
-        port=3306,
-        user="root",
-        password="admin",
-        database="Banco",
-        cursorclass=pymysql.cursors.DictCursor  # Retorna resultados como dicionário
-    )
-
-# Classe Conta
 class Conta:
     def __init__(self, cpf):
         self.cpf = cpf
@@ -45,16 +33,15 @@ class Conta:
         cursor.close()
         conn.close()
 
-# Teste
+
 if __name__ == "__main__":
-    conta = Conta("12345678900")  # coloque um CPF válido que esteja na tabela clientes
-    
+    conta = Conta("12345678900")
     print("Saldo atual:", conta.consultar_saldo())
-    
+
     if conta.debitar(100):
         print("Débito realizado com sucesso!")
     else:
         print("Saldo insuficiente ou cliente não encontrado.")
-    
+
     conta.creditar(400)
     print("Saldo após crédito:", conta.consultar_saldo())
