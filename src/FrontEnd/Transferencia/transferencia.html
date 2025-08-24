@@ -9,19 +9,40 @@
 <body>
   <header>
     <div class="container">
-      <div class="logo"><img src="../Tela Inicial/img/logo.png" alt="Logo Banco Inteliogia"></div>
+      <div class="logo">
+        <img src="../Tela Inicial/img/logo.png" alt="Logo Banco Inteliogia">
+      </div>
       <div class="menu">
         <nav>
           <a href="../Tela Inicial/index.html">Início</a>
-          <a href="../Dashboard/dashboard.html">Dashboard</a>
         </nav>
       </div>
-      <div class="social">
-        <a href="../Cadastro/cadastro.html" class="btn-link">Cadastro</a>
-        <a href="../Login/login.html" class="btn-link">Login</a>
+      <div class="dashboard-menu">
+        <button id="dashboard-btn" class="dashboard-btn">
+          <span class="menu-icon">&#9776;</span>
+          Dashboard
+        </button>
+        <div id="dashboard-dropdown" class="dashboard-dropdown" style="display: none;">
+          <a href="../Cartoes/cartoes.html">Meus Cartões</a>
+          <a href="../Extrato/extrato.html">Extrato</a>
+          <a href="transferencia.html">Transferência</a>
+          <a href="../Investimentos/investimentos.html">Investimentos</a>
+        </div>
       </div>
     </div>
   </header>
+  <script>
+    const btn = document.getElementById('dashboard-btn');
+    const dropdown = document.getElementById('dashboard-dropdown');
+    btn.onclick = () => {
+      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    };
+    window.onclick = function(event) {
+      if (!event.target.matches('#dashboard-btn') && !event.target.matches('.menu-icon')) {
+        dropdown.style.display = 'none';
+      }
+    }
+  </script>
   <main>
     <section class="transferencia-section">
       <div class="container1">
