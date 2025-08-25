@@ -37,33 +37,24 @@
           </div>
         </div>
 
-        <div class="form-group">
-          <label>Tipo de Cartão</label>
-          <div class="card-types">
-            <div class="card-option" data-value="credito">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/196/196578.png"
-                alt="Crédito"
-              />
-              <p>Cartão de Crédito</p>
-            </div>
-            <div class="card-option" data-value="debito">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/196/196566.png"
-                alt="Débito"
-              />
-              <p>Cartão de Débito</p>
-            </div>
-            <div class="card-option" data-value="multiplo">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/196/196561.png"
-                alt="Débito/Crédito"
-              />
-              <p>Cartão Débito/Crédito</p>
-            </div>
-          </div>
-          <input type="hidden" id="cardType" name="cardType" required />
-        </div>
+<div class="form-group">
+  <label>Tipo de Cartão</label>
+  <div class="card-types" style="display: flex; gap: 10px;">
+    <div class="card-option" data-value="credito" 
+         style="padding: 10px; border: 1px solid #ccc; border-radius: 5px; cursor: pointer; text-align: center;">
+      <p style="margin: 0; font-weight: bold;">Crédito</p>
+    </div>
+    <div class="card-option" data-value="debito" 
+         style="padding: 10px; border: 1px solid #ccc; border-radius: 5px; cursor: pointer; text-align: center;">
+      <p style="margin: 0; font-weight: bold;">Débito</p>
+    </div>
+    <div class="card-option" data-value="multiplo" 
+         style="padding: 10px; border: 1px solid #ccc; border-radius: 5px; cursor: pointer; text-align: center;">
+      <p style="margin: 0; font-weight: bold;">Débito/Crédito</p>
+    </div>
+  </div>
+  <input type="hidden" id="cardType" name="cardType" required />
+</div>
 
         <div class="form-group">
           <label for="reason">Motivo da Solicitação</label>
