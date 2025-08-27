@@ -1,0 +1,79 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dashboard – Exibição de Ações</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="acoes.css" />
+</head>
+<body>
+<div class="app">
+<!-- Header -->
+<header class="header">
+<div class="brand">
+<div class="logo">AK</div>
+<div>
+<div class="title">Ações — Painel de Exibição</div>
+<div class="card-sub">Acompanhe preços, variação e status da sua carteira</div>
+</div>
+</div>
+<div class="actions">
+<a class="btn" href="#modal-cadastrar">＋ Adicionar ativo</a>
+</div>
+</header>
+
+
+<!-- Toolbar -->
+<div class="toolbar">
+<div class="search">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 21L16.65 16.65M18 11C18 14.866 14.866 18 11 18C7.13401 18 4 14.866 4 11C4 7.13401 7.13401 4 11 4C14.866 4 18 7.13401 18 11Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<input type="search" placeholder="Buscar por código (ex.: PETR4, VALE3, AAPL)…" />
+</div>
+<button class="chip" data-active="true">Hoje</button>
+<button class="chip">7D</button>
+<button class="chip">30D</button>
+<button class="chip">YTD</button>
+<button class="chip">Dividendos</button>
+<button class="chip">Mais negociadas</button>
+</div>
+
+
+<div class="grid">
+<!-- Coluna principal -->
+<section class="card">
+<div class="card-header">
+<div>
+<div class="card-title">Resumo da Carteira</div>
+<div class="card-sub">Valores ilustrativos. Conecte seu backend para dados reais.</div>
+</div>
+</div>
+<div class="card-content">
+<!-- Tiles -->
+<div class="tiles">
+<div class="tile">
+<div class="label">Valor total</div>
+<div class="value">R$ 128.450,22</div>
+<div class="delta up">▲ +2,1% hoje</div>
+</div>
+<div class="tile">
+<div class="label">Lucro/Prejuízo</div>
+<div class="value">+ R$ 3.270,90</div>
+<div class="delta up">▲ +1,8% (YTD)</div>
+</div>
+<div class="tile">
+<div class="label">Dividendos (12M)</div>
+<div class="value">R$ 4.320,00</div>
+<div class="delta">≈ 3,4% yield</div>
+</div>
+<div class="tile">
+<div class="label">Risco</div>
+<div class="value">Moderado</div>
+<div class="delta">Beta 1,12</div>
+</div>
+</div>
+</html>
+

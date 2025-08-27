@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAQ Banco — Perguntas Frequentes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Perguntas Frequentes </h1>
+      <p class="lead">Tire suas dúvidas mais comuns </p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq1" id="q1">Como abrir uma conta no banco?</button>
+        <div id="faq1" class="faq-answer">
+          <p>Você pode abrir sua conta diretamente pelo aplicativo ou site do banco, preenchendo seus dados pessoais e enviando documentos digitais.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq2" id="q2">Quais são as tarifas cobradas?</button>
+        <div id="faq2" class="faq-answer">
+          <p>O banco digital não cobra tarifas de manutenção de conta. Alguns serviços específicos, como saques em caixas eletrônicos, podem ter custo adicional informado no aplicativo.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq3" id="q3">Como faço para solicitar um cartão de crédito?</button>
+        <div id="faq3" class="faq-answer">
+          <p>Após abrir sua conta, acesse a área "Cartões" no aplicativo e faça a solicitação. A análise é feita em poucos minutos e você recebe o cartão virtual imediatamente.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq4" id="q4">É seguro usar o aplicativo do banco?</button>
+        <div id="faq4" class="faq-answer">
+          <p>Sim, utilizamos criptografia de ponta, autenticação em duas etapas e monitoramento constante para garantir a segurança das suas transações.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq5" id="q5">Como faço para entrar em contato com o suporte?</button>
+        <div id="faq5" class="faq-answer">
+          <p>Você pode entrar em contato diretamente pelo chat no aplicativo, disponível 24h por dia, ou pelo telefone indicado na área de ajuda.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq6" id="q6">O banco oferece empréstimos ou financiamentos?</button>
+        <div id="faq6" class="faq-answer">
+          <p>Sim, o banco disponibiliza opções de empréstimos pessoais e financiamentos. Basta acessar a seção "Crédito" no aplicativo para simular e contratar.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Não encontrou sua resposta? <a href="#">Fale com a gente</a></p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const expanded = q.getAttribute('aria-expanded') === 'true';
+        q.setAttribute('aria-expanded', String(!expanded));
+        const answer = document.getElementById(q.getAttribute('aria-controls'));
+        answer.classList.toggle('open', !expanded);
+      });
+    });
+  </script>
+</body>
+</html>
