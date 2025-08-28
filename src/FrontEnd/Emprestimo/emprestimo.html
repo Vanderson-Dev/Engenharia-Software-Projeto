@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Banco Digital - Empréstimo</title>
+    <link rel="stylesheet" href="emprestimo.css" />
+  </head>
+  <body>
+    <div class="loan-container">
+      <div class="logo">Banco Digital</div>
+
+      <div class="loan-form">
+        <h2>Simulação de Empréstimo</h2>
+
+        <form id="loan-form">
+          <div class="input-group">
+            <label for="valor">Valor do Empréstimo (R$)</label>
+            <input type="number" id="valor" required />
+          </div>
+
+          <div class="input-group">
+            <label for="juros">Taxa de Juros (% ao mês)</label>
+            <input type="number" step="0.01" id="juros" required />
+          </div>
+
+          <div class="input-group">
+            <label for="parcelas">Quantidade de Parcelas</label>
+            <input type="number" id="parcelas" required />
+          </div>
+
+          <button type="submit" class="calc-button">Calcular</button>
+        </form>
+
+        <div id="resultado" class="resultado"></div>
+      </div>
+    </div>
+
+    <script src="emprestimo.js"></script>
+  </body>
+</html>
