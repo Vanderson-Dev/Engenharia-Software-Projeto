@@ -9,29 +9,31 @@
 <body>
   <div class="dashboard">
     <header>
-      <h1>Bem-vindo ao Banco Digital</h1>
+      <h1>Bem-vindo ao Banco Digital</h1> <!-- Será atualizado dinamicamente -->
     </header>
 
     <section class="saldo-container">
       <h2>Saldo disponível</h2>
       <div class="saldo">
-        <span class="valor">R$ 1.000.000,00</span>
+        <span class="valor">R$ </span> <!-- Será preenchido com o saldo -->
       </div>
     </section>
 
     <section class="acoes-container">
       <h2>Suas Ações</h2>
       <div class="botoes">
-        <button class="submit-btn" onclick="location.href='../TelaDeposito/telaDeposito.html'">Deposito</button>
-        <button class="submit-btn" onclick="location.href='../TelaSaque/telaSaque.html'">Efetuar Saque</button>
+        <button class="submit-btn" onclick="location.href='../TelaDeposito/telaDeposito.html'">Depósito</button>
+        <button class="submit-btn" onclick="location.href='../TelaSaque/telaSaque.html'">Saque</button>
         <button class="submit-btn" onclick="location.href='../Transferencia/transferencia.html'">Transferência</button>
         <button class="submit-btn" onclick="location.href='../TelaCartoes/ResumoCartoes/ResumoCartoes.html'">Cartão</button>
-        <button class="submit-btn" onclick="location.href=''">Extrato</button>
+        <button class="submit-btn" onclick="location.href='../Extrato/extrato.html'">Extrato</button>
         <button class="submit-btn" onclick="location.href='../Tela De Investimento/investimento.html'">Investimentos</button>
         <button class="submit-btn" onclick="location.href='../FAQ/index.html'">FAQ</button>
         <button class="submit-btn" onclick="location.href='../Tela Inicial/index.html'">Sair</button>
       </div>
     </section>
   </div>
+
+  <script src="dashboard.js"></script>
 </body>
 </html>

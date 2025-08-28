@@ -30,8 +30,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (data.success) {
         alert("Login bem-sucedido!");
+
+        // ✅ Armazena email e senha no localStorage para uso posterior
         localStorage.setItem("email", email);
-        window.location.href = "../Dashboard/dashboard.html"; // redireciona para o dashboard
+        localStorage.setItem("senha", password);
+
+        // Redireciona para o dashboard
+        window.location.href = "../Dashboard/dashboard.html";
       } else {
         alert("E-mail ou senha inválidos.");
       }

@@ -88,3 +88,58 @@ def realizar_saque():
     cursor.close()
     conn.close()
     return jsonify({"mensagem": "Saque realizado com sucesso!"}), 200
+
+#saldo
+@deposito_bp.route('/saldo', methods=['POST'])
+def consultar_saldo():
+    data = request.get_json()
+    email = data.get('email')
+    senha = data.get('senha')
+
+    if not email or not senha:
+        return jsonify({"mensagem": "Dados incompletos"}), 400
+
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        SELECT Conta.saldo 
+        FROM clientes 
+        JOIN Conta ON Conta.usuario_id = clientes.id 
+        WHERE clientes.email = %s AND clientes.senha = %s
+    """, (email, senha))
+    resultado = cursor.fetchone()
+
+    cursor.close()
+    conn.close()
+
+    if resultado:
+        return jsonify({"saldo": resultado['saldo']}), 200
+    else:
+        return jsonify({"mensagem": "Conta não encontrada"}), 404
+   
+    
+saldo_bp = Blueprint('saldo', __name__)
+@saldo_bp.route('/nome', methods=['POST'])
+def consultar_nome():
+    dados = request.get_json()
+    email = dados.get('email')
+    senha = dados.get('senha')
+
+    if not email or not senha:
+        return jsonify({"mensagem": "Dados incompletos"}), 400
+
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT nome FROM clientes WHERE email = %s AND senha = %s", (email, senha))
+    resultado = cursor.fetchone()
+
+    cursor.close()
+    conn.close()
+
+    if resultado:
+        return jsonify({"nome": resultado['nome']}), 200
+    else:
+        return jsonify({"mensagem": "Usuário não encontrado"}), 404
+
