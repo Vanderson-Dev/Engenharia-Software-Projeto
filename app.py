@@ -3,7 +3,6 @@ from flask import Flask
 from flask_cors import CORS
 import sys
 import os
-
 sys.path.append(os.path.join(os.path.dirname(__file__), "src"))
 
 # Importa o "módulo" de cadastro que criamos

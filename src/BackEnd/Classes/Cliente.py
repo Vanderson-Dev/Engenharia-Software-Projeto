@@ -40,6 +40,14 @@ class Cliente:
                     self.nome, self.endereco, self.cpf, self.data_nascimento,
                     self.sexo, self.email, self.senha, datetime.now()
                 ))
+
+                # Pega o id do cliente criado
+                cliente_id = cursor.lastrowid
+
+                # Criar conta vinculada ao cliente
+                sql_conta = "INSERT INTO Conta (saldo, usuario_id) VALUES (0.00, %s)"
+                cursor.execute(sql_conta, (cliente_id,))
+
             conn.commit()
             return True
         except pymysql.IntegrityError:
