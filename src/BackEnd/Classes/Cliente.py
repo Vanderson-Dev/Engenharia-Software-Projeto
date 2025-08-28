@@ -64,3 +64,5 @@ class Cliente:
         finally:
             if conn:
                 conn.close()
+
+    

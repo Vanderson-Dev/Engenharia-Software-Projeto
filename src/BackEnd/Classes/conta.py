@@ -11,8 +11,10 @@ def get_db_connection():
     )
 
 class Conta:
-    def __init__(self, cpf):
+    def __init__(self, cpf, saldo, id):
+        self.id = id
         self.cpf = cpf
+        self.saldo = saldo
 
     def consultar_saldo(self):
         conn = get_db_connection()
@@ -44,14 +46,4 @@ class Conta:
         conn.close()
 
 
-if __name__ == "__main__":
-    conta = Conta("12345678900")
-    print("Saldo atual:", conta.consultar_saldo())
 
-    if conta.debitar(100):
-        print("Débito realizado com sucesso!")
-    else:
-        print("Saldo insuficiente ou cliente não encontrado.")
-
-    conta.creditar(400)
-    print("Saldo após crédito:", conta.consultar_saldo())
