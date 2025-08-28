@@ -1,7 +1,7 @@
 # Arquivo: src/BackEnd/Cadastro/cadastro.py
 from flask import Blueprint, request, jsonify
 # Importa a classe Cliente do arquivo vizinho
-from src.BackEnd.Cadastro.Cliente import Cliente
+from BackEnd.Classes.Cliente import Cliente
 
 # Cria um "módulo" para as rotas de cadastro
 cadastro_bp = Blueprint('cadastro', __name__)

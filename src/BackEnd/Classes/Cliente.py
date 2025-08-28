@@ -2,17 +2,18 @@
 import pymysql
 from pymysql.cursors import DictCursor
 from datetime import datetime
+from BackEnd.config import DB_CONFIG
 
 # Função de conexão para o seu banco de dados local
 def get_db_connection():
     return pymysql.connect(
-        host="localhost",
-        port=3306,
-        user="root",
-        password="root",
-        database="Banco",
-        cursorclass=DictCursor
-    )
+        host=DB_CONFIG["host"],
+        user=DB_CONFIG["user"],
+        password=DB_CONFIG["password"],
+        database=DB_CONFIG["database"],
+        cursorclass=pymysql.cursors.DictCursor
+        )
+
 
 class Cliente:
     def __init__(self, nome, endereco, cpf, data_nascimento, sexo, email, senha):
@@ -44,6 +45,22 @@ class Cliente:
         except pymysql.IntegrityError:
             # Erro de CPF ou E-mail duplicado
             return False
+        finally:
+            if conn:
+                conn.close()
+    
+    def autenticarCliente(email, senha):
+        """Verifica se um cliente existe com o email e senha fornecidos."""
+        conn = None
+        try:
+            conn = get_db_connection()
+            with conn.cursor() as cursor:
+                cursor.execute(
+                    "SELECT * FROM clientes WHERE email=%s AND senha=%s",
+                    (email, senha)
+                )
+                cliente = cursor.fetchone()
+            return cliente  # Retorna o dict do cliente ou None
         finally:
             if conn:
                 conn.close()
