@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (data.success) {
         alert("Login bem-sucedido!");
 
-        // ✅ Armazena email e senha no localStorage para uso posterior
+        // Armazena email e senha no localStorage para uso posterior
         localStorage.setItem("email", email);
         localStorage.setItem("senha", password);
 
