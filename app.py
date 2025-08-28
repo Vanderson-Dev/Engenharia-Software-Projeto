@@ -9,7 +9,8 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "src"))
 # Importa o "módulo" de cadastro que criamos
 from src.BackEnd.Cadastro.cadastro import cadastro_bp
 from src.BackEnd.Login.login import login_bp
-
+from src.BackEnd.Rotas.rotas import deposito_bp
+from src.BackEnd.Rotas.rotas import saque_bp
 # Cria a aplicação principal
 app = Flask(__name__)
 CORS(app)
@@ -17,6 +18,8 @@ CORS(app)
 # "Conecta" o módulo de cadastro ao servidor principal
 app.register_blueprint(cadastro_bp)
 app.register_blueprint(login_bp)
+app.register_blueprint(deposito_bp)
+app.register_blueprint(saque_bp)
 
 # Rota de teste para verificar se o servidor está no ar
 @app.route("/")

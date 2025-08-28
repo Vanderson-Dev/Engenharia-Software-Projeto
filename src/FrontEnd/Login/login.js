@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (data.success) {
         alert("Login bem-sucedido!");
+        localStorage.setItem("email", email);
         window.location.href = "../Dashboard/dashboard.html"; // redireciona para o dashboard
       } else {
         alert("E-mail ou senha inválidos.");
