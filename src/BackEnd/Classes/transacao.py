@@ -1,4 +1,4 @@
-from Conta.conta import Conta
+from Conta import Conta
 
 class Transacao:
     def __init__(self, cpf_origem, cpf_destino, valor):

@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+body {
+  background-color: rgb(252, 247, 235);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.saque-container {
+  width: 350px;
+  padding: 40px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid #dcc385;
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #dcc385;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.saque-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+  font-size: 14px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #dcc385;
+  outline: none;
+}
+
+.saque-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #dcc385;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.saque-button:hover {
+  background-color: #c9b070;
+}
+
+.back-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.back-link a {
+  color: #dcc385;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.back-link a:hover {
+  text-decoration: underline;
+}

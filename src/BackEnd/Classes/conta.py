@@ -16,7 +16,7 @@ class Conta:
         self.cpf = cpf
         self.saldo = saldo
 
-    def consultar_saldo(self):
+    def verExtrato(self):
         conn = get_db_connection()
         cursor = conn.cursor()
         cursor.execute("SELECT saldo FROM clientes WHERE cpf = %s", (self.cpf,))
@@ -25,8 +25,8 @@ class Conta:
         conn.close()
         return resultado['saldo'] if resultado else None
 
-    def debitar(self, valor):
-        saldo_atual = self.consultar_saldo()
+    def sacar(self, valor):
+        saldo_atual = self.verExtrato()
         if saldo_atual is None or saldo_atual < valor:
             return False
         conn = get_db_connection()
@@ -37,7 +37,7 @@ class Conta:
         conn.close()
         return True
 
-    def creditar(self, valor):
+    def depositar(self, valor):
         conn = get_db_connection()
         cursor = conn.cursor()
         cursor.execute("UPDATE clientes SET saldo = saldo + %s WHERE cpf = %s", (valor, self.cpf))
@@ -45,5 +45,22 @@ class Conta:
         cursor.close()
         conn.close()
 
+    '''def transferir(self, valor, conta_destino):
+        saldo_atual = self.verExtrato()
+        if saldo_atual is None or saldo_atual < valor:
+            return False
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        try:
+            cursor.execute("UPDATE clientes SET saldo = saldo - %s WHERE cpf = %s", (valor, self.cpf))
+            cursor.execute("UPDATE clientes SET saldo = saldo + %s WHERE cpf = %s", (valor, conta_destino.cpf))
+            conn.commit()
+            return True
+        except Exception as e:
+            conn.rollback()
+            return False
+        finally:
+            cursor.close()
+            conn.close()'''
 
 
