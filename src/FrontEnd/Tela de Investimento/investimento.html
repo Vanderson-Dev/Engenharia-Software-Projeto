@@ -7,25 +7,6 @@
   <link rel="stylesheet" href="investimento.css" />
 </head>
 <body>
-  <header>
-    <div class="container">
-      <div class="logo">
-        <img src="../Tela Inicial/img/logo.png" alt="Logo Banco Inteliogia">
-      </div>
-      <div class="dashboard-menu">
-        <button id="dashboard-btn" class="dashboard-btn">
-          <span class="menu-icon">&#9776;</span>
-          Dashboard
-        </button>
-        <div id="dashboard-dropdown" class="dashboard-dropdown" style="display: none;">
-          <a href="../Cartoes/cartoes.html">Meus Cartões</a>
-          <a href="../Extrato/extrato.html">Extrato</a>
-          <a href="../Transferencia/transferencia.html">Transferência</a>
-          <a href="investimentos.html">Investimentos</a>
-        </div>
-      </div>
-    </div>
-  </header>
   <main>
     <section class="investimentos">
       <h1>Meus Investimentos</h1>
@@ -47,6 +28,14 @@
           <p>Rentabilidade: variável</p>
           <p>Liquidez: D+1</p>
           <button class="btn-investir">Investir</button>
+        </div>
+        <div class="investimento-card">
+          <h2>Ações</h2>
+          <p>Rentabilidade: variável</p>
+          <p>Liquidez: D+1</p>
+          <button class="btn-investir" onclick="window.location.href='../Acoes/acoes.html'">
+            Investir
+          </button>
         </div>
       </div>
     </section>
