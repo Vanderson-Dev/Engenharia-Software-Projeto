@@ -1,8 +1,9 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Arial", sans-serif;
+  font-family: "Segoe UI", "Arial", sans-serif;
 }
 
 body {
@@ -11,77 +12,100 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  padding: 20px;
 }
 
+/* CONTAINER */
 .saque-container {
-  width: 350px;
-  padding: 40px;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  border: 1px solid #dcc385;
+  width: 400px;
+  padding: 40px 35px;
+  background-color: #fff;
+  border-radius: 16px;
+  border: 2px solid #dcc385;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
+/* LOGO */
 .logo {
   text-align: center;
-  margin-bottom: 30px;
   color: #dcc385;
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
+/* TITULO */
 .saque-form h2 {
   text-align: center;
-  margin-bottom: 20px;
   color: #333;
+  font-size: 22px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
 }
 
+/* INPUTS */
 .input-group {
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .input-group label {
-  display: block;
-  margin-bottom: 8px;
-  color: #555;
-  font-size: 14px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #444;
 }
 
 .input-group input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 14px;
-  transition: border 0.3s;
+  padding: 14px 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 15px;
+  background-color: #fafafa;
+  transition: border 0.3s, background 0.3s;
 }
 
 .input-group input:focus {
   border-color: #dcc385;
+  background-color: #fff;
   outline: none;
 }
 
+/* BOTÃO */
 .saque-button {
   width: 100%;
-  padding: 12px;
-  background-color: #dcc385;
+  padding: 16px;
   border: none;
-  border-radius: 5px;
-  color: white;
-  font-size: 16px;
+  border-radius: 12px;
+  background-color: #dcc385;
+  color: #fff;
+  font-size: 18px;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background 0.3s, transform 0.2s;
 }
 
 .saque-button:hover {
   background-color: #c9b070;
+  transform: translateY(-1px);
 }
 
+.saque-button:active {
+  transform: scale(0.97);
+}
+
+/* LINK VOLTAR */
 .back-link {
   text-align: center;
-  margin-top: 20px;
-  font-size: 14px;
+  font-size: 15px;
+  margin-top: 10px;
 }
 
 .back-link a {
@@ -92,4 +116,24 @@ body {
 
 .back-link a:hover {
   text-decoration: underline;
+}
+
+/* UTILITÁRIOS */
+.text-center { text-align: center; }
+.text-bold { font-weight: bold; }
+.mt-20 { margin-top: 20px; }
+.mb-20 { margin-bottom: 20px; }
+.rounded-xl { border-radius: 20px; }
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .saque-container { width: 85%; padding: 30px; }
+  .logo { font-size: 24px; }
+  .saque-form h2 { font-size: 20px; }
+}
+
+@media (max-width: 480px) {
+  .saque-container { width: 95%; padding: 20px; }
+  .logo { font-size: 20px; }
+  .saque-button { font-size: 16px; padding: 14px; }
 }

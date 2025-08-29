@@ -1,8 +1,9 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Arial", sans-serif;
+  font-family: "Segoe UI", "Arial", sans-serif;
 }
 
 body {
@@ -11,85 +12,132 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  padding: 20px;
 }
 
+/* CONTAINER */
 .login-container {
-  width: 350px;
-  padding: 40px;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  border: 1px solid #dcc385;
+  width: 420px;
+  padding: 50px 40px;
+  background-color: #fff;
+  border-radius: 16px;
+  border: 2px solid #dcc385;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
+/* LOGO */
 .logo {
   text-align: center;
-  margin-bottom: 30px;
   color: #dcc385;
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
+/* TITULO */
 .login-form h2 {
   text-align: center;
-  margin-bottom: 20px;
   color: #333;
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
 }
 
+/* INPUT GROUP */
 .input-group {
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .input-group label {
-  display: block;
-  margin-bottom: 8px;
-  color: #555;
-  font-size: 14px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #444;
 }
 
 .input-group input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 14px;
-  transition: border 0.3s;
+  padding: 14px 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 15px;
+  background-color: #fafafa;
+  transition: border 0.3s, background 0.3s;
 }
 
 .input-group input:focus {
   border-color: #dcc385;
+  background-color: #fff;
   outline: none;
 }
 
+/* BOTÕES */
 .login-button {
-  width: 100%;
-  padding: 12px;
-  background-color: #dcc385;
+  padding: 14px;
   border: none;
-  border-radius: 5px;
-  color: white;
-  font-size: 16px;
+  width: 335px;
+  border-radius: 10px;
+  font-size: 17px;
   font-weight: bold;
+  background-color: #dcc385;
+  color: #fff;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background 0.3s, transform 0.2s;
 }
 
 .login-button:hover {
   background-color: #c9b070;
+  transform: translateY(-1px);
 }
 
+.login-button:active {
+  transform: scale(0.97);
+}
+
+/* LINK CADASTRO */
 .signup-link {
   text-align: center;
-  margin-top: 20px;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .signup-link a {
   color: #dcc385;
-  text-decoration: none;
   font-weight: bold;
+  text-decoration: none;
 }
 
 .signup-link a:hover {
   text-decoration: underline;
+}
+
+/* TIPOGRAFIA EXTRA */
+.text-small { font-size: 13px; color: #555; }
+.text-large { font-size: 20px; font-weight: 600; }
+
+/* UTILITÁRIOS */
+.mt-10 { margin-top: 10px; }
+.mt-20 { margin-top: 20px; }
+.rounded-lg { border-radius: 20px; }
+.shadow-light { box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+.shadow-heavy { box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .login-container { width: 90%; padding: 30px; }
+  .logo { font-size: 26px; }
+  .login-form h2 { font-size: 20px; }
+}
+
+@media (max-width: 480px) {
+  .login-container { width: 95%; padding: 20px; }
+  .logo { font-size: 22px; }
+  .login-button { font-size: 15px; padding: 12px; }
+  .input-group input { font-size: 14px; padding: 12px; }
 }
