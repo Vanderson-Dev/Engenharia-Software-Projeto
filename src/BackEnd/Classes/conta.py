@@ -32,6 +32,13 @@ class Conta:
         conn = get_db_connection()
         cursor = conn.cursor()
         cursor.execute("UPDATE Conta SET saldo = saldo - %s WHERE usuario_id = %s", (valor, self.id))
+        cursor.execute(
+            """
+            INSERT INTO transactions (account_id, type, amount, description)
+            VALUES (%s, 'saque', %s, %s)
+            """,
+            (self.id, valor, 'Saque realizado')
+        )
         conn.commit()
         cursor.close()
         conn.close()
@@ -41,6 +48,13 @@ class Conta:
         conn = get_db_connection()
         cursor = conn.cursor()
         cursor.execute("UPDATE Conta SET saldo = saldo + %s WHERE usuario_id = %s", (valor, self.id))
+        cursor.execute(
+            """
+            INSERT INTO transactions (account_id, type, amount, description)
+            VALUES (%s, 'deposito', %s, %s)
+            """,
+            (self.id, valor, 'Depósito realizado')
+        )
         conn.commit()
         cursor.close()
         conn.close()
@@ -54,6 +68,13 @@ class Conta:
         try:
             cursor.execute("UPDATE Conta SET saldo = saldo - %s WHERE usuario_id = %s", (valor, self.id))
             cursor.execute("UPDATE Conta SET saldo = saldo + %s WHERE usuario_id = %s", (valor, conta_destino.id))
+            cursor.execute(
+            """
+            INSERT INTO transactions (account_id, type, amount, target_account_id, description)
+            VALUES (%s, 'transferencia', %s, %s, %s)
+            """,
+            (self.id, valor, conta_destino.id, f'Transferência para usuário {conta_destino.id}')
+        )
             conn.commit()
             return True
         except Exception as e:
