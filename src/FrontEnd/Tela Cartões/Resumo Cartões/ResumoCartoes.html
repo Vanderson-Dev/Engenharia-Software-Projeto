@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Meus Cartões</title>
-  <link rel="stylesheet" href="ResumoCartoes.css">
+  <link rel="stylesheet" href="ResumoCartoes.css" />
 </head>
 <body>
   <div class="container">
@@ -21,7 +21,7 @@
         </div>
         <div class="cartao-info">
           <div class="numero">•••• •••• •••• 1234</div>
-          <div class="titular">João Silva</div>
+          <div class="titular nome-usuario">João Silva</div>
           <div class="validade">Válido até 05/2026</div>
         </div>
         <div class="limite">
@@ -42,12 +42,12 @@
         </div>
         <div class="cartao-info">
           <div class="numero">•••• •••• •••• 5678</div>
-          <div class="titular">João Silva</div>
+          <div class="titular nome-usuario">Olá</div>
           <div class="validade">Válido até 08/2025</div>
         </div>
         <div class="limite">
           <span>Saldo disponível:</span>
-          <span class="valor">R$ 3.250,00</span>
+          <span class="valor saldo-usuario">R$ </span>
         </div>
         <div class="acoes">
           <button class="btn-extrato">Ver Extrato</button>
@@ -57,10 +57,12 @@
     </main>
 
     <footer>
-      <button class="btn-novo-cartao" onclick="location.href='../FormularioSolicitaCartao/FormularioSolicitaCartao.html'">
+      <button class="btn-novo-cartao" onclick="location.href='../../FormularioSolicitaCartao/FormularioSolicitaCartao.html'">
         Solicitar Novo Cartão
       </button>
     </footer>
   </div>
+
+  <script src="ResumoCartoes.js"></script>
 </body>
 </html>
