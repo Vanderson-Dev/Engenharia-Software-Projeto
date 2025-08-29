@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from src.BackEnd.Classes.Conta import Conta
+from src.BackEnd.Classes.Conta import Conta  # importa a classe Conta
 import pymysql
 
 def get_db_connection():
@@ -12,146 +12,136 @@ def get_db_connection():
         cursorclass=pymysql.cursors.DictCursor
     )
 
-# Função auxiliar para buscar cliente
-def buscar_cliente(cursor, email, senha):
-    cursor.execute("""
-        SELECT clientes.id, clientes.cpf, clientes.nome, Conta.saldo 
-        FROM clientes 
-        JOIN Conta ON Conta.usuario_id = clientes.id 
-        WHERE clientes.email = %s AND clientes.senha = %s
-    """, (email, senha))
-    return cursor.fetchone()
-
-# Blueprint: Depósito
 deposito_bp = Blueprint('deposito', __name__)
 
 @deposito_bp.route('/deposito', methods=['POST'])
 def realizar_deposito():
-    try:
-        data = request.get_json()
-        email = data.get('email')
-        valor = float(data.get('valor'))
-        senha = data.get('senha')
+    data = request.get_json()
+    email = data.get('email')
+    valor = data.get('valor')
+    senha = data.get('senha')
 
-        if not email or not valor or not senha or valor <= 0:
-            return jsonify({"mensagem": "Dados inválidos"}), 400
+    if not email or not valor or not senha:
+        return jsonify({"mensagem": "Dados incompletos"}), 400
 
-        conn = get_db_connection()
-        cursor = conn.cursor()
+    conn = get_db_connection()
+    cursor = conn.cursor()
 
-        cliente = buscar_cliente(cursor, email, senha)
-        if not cliente:
-            cursor.close()
-            conn.close()
-            return jsonify({"mensagem": "E-mail ou senha inválidos"}), 401
+    # Busca o cliente pelo e-mail e senha
+    cursor.execute("""
+    SELECT clientes.id, clientes.cpf, Conta.saldo 
+    FROM clientes 
+    JOIN Conta ON Conta.usuario_id = clientes.id 
+    WHERE clientes.email = %s AND clientes.senha = %s
+""", (email, senha))
+    cliente = cursor.fetchone()
 
-        conta = Conta(cpf=cliente['cpf'], saldo=cliente['saldo'], id=cliente['id'])
-        conta.depositar(valor)
 
-        cursor.execute("UPDATE Conta SET saldo = %s WHERE usuario_id = %s", (conta.saldo, conta.id))
-        conn.commit()
-
+    if not cliente:
         cursor.close()
         conn.close()
-        return jsonify({"mensagem": "Depósito realizado com sucesso!"}), 200
+        return jsonify({"mensagem": "E-mail ou senha inválidos"}), 401
 
-    except Exception as e:
-        return jsonify({"mensagem": "Erro interno"}), 500
+    conta = Conta(cpf=cliente['cpf'], saldo=cliente['saldo'], id=cliente['id'])
+    conta.depositar(valor)
 
-# Blueprint: Saque
+    cursor.close()
+    conn.close()
+    return jsonify({"mensagem": "Depósito realizado com sucesso!"}), 200
+
+#saque
 saque_bp = Blueprint('saque', __name__)
-
 @saque_bp.route('/saque', methods=['POST'])
 def realizar_saque():
-    try:
-        data = request.get_json()
-        email = data.get('email')
-        valor = float(data.get('valor'))
-        senha = data.get('senha')
+    data = request.get_json()
+    email = data.get('email')
+    valor = data.get('valor')
+    senha = data.get('senha')
 
-        if not email or not valor or not senha or valor <= 0:
-            return jsonify({"mensagem": "Dados inválidos"}), 400
+    if not email or not valor or not senha:
+        return jsonify({"mensagem": "Dados incompletos"}), 400
 
-        conn = get_db_connection()
-        cursor = conn.cursor()
+    conn = get_db_connection()
+    cursor = conn.cursor()
 
-        cliente = buscar_cliente(cursor, email, senha)
-        if not cliente:
-            cursor.close()
-            conn.close()
-            return jsonify({"mensagem": "E-mail ou senha inválidos"}), 401
+    # Busca o cliente e saldo atual
+    cursor.execute("""
+        SELECT clientes.id, clientes.cpf, Conta.saldo 
+        FROM clientes 
+        JOIN Conta ON Conta.usuario_id = clientes.id 
+        WHERE clientes.email = %s AND clientes.senha = %s
+    """, (email, senha))
+    cliente = cursor.fetchone()
 
-        conta = Conta(cpf=cliente['cpf'], saldo=cliente['saldo'], id=cliente['id'])
-
-        if not conta.sacar(valor):
-            cursor.close()
-            conn.close()
-            return jsonify({"mensagem": "Saldo insuficiente para saque."}), 403
-
-        cursor.execute("UPDATE Conta SET saldo = %s WHERE usuario_id = %s", (conta.saldo, conta.id))
-        conn.commit()
-
+    if not cliente:
         cursor.close()
         conn.close()
-        return jsonify({"mensagem": "Saque realizado com sucesso!"}), 200
+        return jsonify({"mensagem": "E-mail ou senha inválidos"}), 401
 
-    except Exception as e:
-        return jsonify({"mensagem": "Erro interno"}), 500
+    conta = Conta(cpf=cliente['cpf'], saldo=cliente['saldo'], id=cliente['id'])
 
-# Blueprint: Saldo
-saldo_bp = Blueprint('saldo', __name__)
+    if not conta.sacar(valor):
+        cursor.close()
+        conn.close()
+        return jsonify({"mensagem": "Saldo insuficiente para saque."}), 403
 
-@saldo_bp.route('/saldo', methods=['POST'])
+    cursor.close()
+    conn.close()
+    return jsonify({"mensagem": "Saque realizado com sucesso!"}), 200
+
+#saldo
+@deposito_bp.route('/saldo', methods=['POST'])
 def consultar_saldo():
-    try:
-        data = request.get_json()
-        email = data.get('email')
-        senha = data.get('senha')
+    data = request.get_json()
+    email = data.get('email')
+    senha = data.get('senha')
 
-        if not email or not senha:
-            return jsonify({"mensagem": "Dados incompletos"}), 400
+    if not email or not senha:
+        return jsonify({"mensagem": "Dados incompletos"}), 400
 
-        conn = get_db_connection()
-        cursor = conn.cursor()
+    conn = get_db_connection()
+    cursor = conn.cursor()
 
-        cliente = buscar_cliente(cursor, email, senha)
-        cursor.close()
-        conn.close()
+    cursor.execute("""
+        SELECT Conta.saldo 
+        FROM clientes 
+        JOIN Conta ON Conta.usuario_id = clientes.id 
+        WHERE clientes.email = %s AND clientes.senha = %s
+    """, (email, senha))
+    resultado = cursor.fetchone()
 
-        if cliente:
-            return jsonify({"saldo": cliente['saldo']}), 200
-        else:
-            return jsonify({"mensagem": "Conta não encontrada"}), 404
+    cursor.close()
+    conn.close()
 
-    except Exception as e:
-        return jsonify({"mensagem": "Erro interno"}), 500
-
+    if resultado:
+        return jsonify({"saldo": resultado['saldo']}), 200
+    else:
+        return jsonify({"mensagem": "Conta não encontrada"}), 404
+   
+    
+saldo_bp = Blueprint('saldo', __name__)
 @saldo_bp.route('/nome', methods=['POST'])
 def consultar_nome():
-    try:
-        dados = request.get_json()
-        email = dados.get('email')
-        senha = dados.get('senha')
+    dados = request.get_json()
+    email = dados.get('email')
+    senha = dados.get('senha')
 
-        if not email or not senha:
-            return jsonify({"mensagem": "Dados incompletos"}), 400
+    if not email or not senha:
+        return jsonify({"mensagem": "Dados incompletos"}), 400
 
-        conn = get_db_connection()
-        cursor = conn.cursor()
+    conn = get_db_connection()
+    cursor = conn.cursor()
 
-        cursor.execute("SELECT nome FROM clientes WHERE email = %s AND senha = %s", (email, senha))
-        resultado = cursor.fetchone()
+    cursor.execute("SELECT nome FROM clientes WHERE email = %s AND senha = %s", (email, senha))
+    resultado = cursor.fetchone()
 
-        cursor.close()
-        conn.close()
+    cursor.close()
+    conn.close()
 
-        if resultado:
-            return jsonify({"nome": resultado['nome']}), 200
-        else:
-            return jsonify({"mensagem": "Usuário não encontrado"}), 404
-
-    except Exception as e:
-        return jsonify({"mensagem": "Erro interno"}), 500
+    if resultado:
+        return jsonify({"nome": resultado['nome']}), 200
+    else:
+        return jsonify({"mensagem": "Usuário não encontrado"}), 404
 
 # Blueprint: Transferência
 transferencia_bp = Blueprint('transferencia', __name__)
@@ -171,7 +161,13 @@ def realizar_transferencia():
         conn = get_db_connection()
         cursor = conn.cursor()
 
-        remetente = buscar_cliente(cursor, email, senha)
+        cursor.execute("""
+        SELECT clientes.id, clientes.cpf, clientes.nome, Conta.saldo 
+        FROM clientes 
+        JOIN Conta ON Conta.usuario_id = clientes.id 
+        WHERE clientes.email = %s AND clientes.senha = %s
+    """, (email, senha))
+        remetente = cursor.fetchone()
         if not remetente:
             cursor.close()
             conn.close()
