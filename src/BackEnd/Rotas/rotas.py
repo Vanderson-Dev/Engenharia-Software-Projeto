@@ -1,12 +1,13 @@
 from flask import Blueprint, request, jsonify
-from src.BackEnd.Classes.Conta import Conta  # importa a classe Conta
+from src.BackEnd.Classes.conta import Conta  # importa a classe Conta
+from src.BackEnd.Classes.investimentos import realizar_investimento
 import pymysql
 
 def get_db_connection():
     return pymysql.connect(
         host="localhost",
         port=3306,
-        user="root",
+        user="root", 
         password="admin",
         database="Banco",
         cursorclass=pymysql.cursors.DictCursor
@@ -196,3 +197,31 @@ def realizar_transferencia():
 
     except Exception as e:
         return jsonify({"mensagem": "Erro interno"}), 500
+    
+investir_bp = Blueprint('investir', __name__)
+
+@investir_bp.route('/investir', methods=['POST'])
+def investir():
+    data = request.get_json()
+    email = data.get('email')
+    senha = data.get('senha')
+    valor = float(data.get('valor'))
+    tipo = data.get('tipo')
+
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute("""
+        SELECT clientes.id FROM clientes
+        WHERE clientes.email = %s AND clientes.senha = %s
+    """, (email, senha))
+    usuario = cursor.fetchone()
+    if not usuario:
+        cursor.close()
+        conn.close()
+        return jsonify({'erro': 'Usuário não encontrado.'}), 400
+
+    usuario_id = usuario['id']
+    resultado = realizar_investimento(conn, usuario_id, valor, tipo)
+    cursor.close()
+    conn.close()
+    return jsonify(resultado)

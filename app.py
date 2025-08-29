@@ -12,6 +12,7 @@ from src.BackEnd.Rotas.rotas import deposito_bp
 from src.BackEnd.Rotas.rotas import saque_bp
 from src.BackEnd.Rotas.rotas import saldo_bp
 from src.BackEnd.Rotas.rotas import transferencia_bp
+from src.BackEnd.Rotas.rotas import investir_bp
 # Cria a aplicação principal
 app = Flask(__name__)
 CORS(app)
@@ -23,6 +24,7 @@ app.register_blueprint(deposito_bp)
 app.register_blueprint(saque_bp)
 app.register_blueprint(saldo_bp)
 app.register_blueprint(transferencia_bp)
+app.register_blueprint(investir_bp)
 
 # Rota de teste para verificar se o servidor está no ar
 @app.route("/")

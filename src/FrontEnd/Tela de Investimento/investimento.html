@@ -7,50 +7,74 @@
   <link rel="stylesheet" href="investimento.css" />
 </head>
 <body>
-  <main>
-    <section class="investimentos">
-      <h1>Meus Investimentos</h1>
-      <div class="investimentos-lista">
-        <div class="investimento-card">
-          <h2>CDB</h2>
-          <p>Rentabilidade: 12% ao ano</p>
-          <p>Liquidez: Diária</p>
-          <button class="btn-investir">Investir</button>
+  <div class="container">
+    <header>
+      <h1>Investimentos</h1>
+    </header>
+    
+    <div class="saldo-area">
+      <label for="saldo-atual">Saldo atual:</label>
+      <span id="saldo-atual">R$ 0,00</span>
+    </div>
+    <div class="valor-area">
+      <label for="valor-investir">Valor a investir:</label>
+      <input type="number" id="valor-investir" min="1" placeholder="Digite o valor" />
+    </div>
+
+    <div class="investimentos-lista">
+      <div class="investimento-card">
+        <div class="investimento-header">
+          <span class="tipo">Investimento 1</span>
         </div>
-        <div class="investimento-card">
-          <h2>LCI</h2>
-          <p>Rentabilidade: 10% ao ano</p>
-          <p>Liquidez: 90 dias</p>
-          <button class="btn-investir">Investir</button>
+        <div class="investimento-info">
+          <p>Ganho de <strong>15%</strong> sobre o valor investido</p>
+          <p>Chance de ganhar: <strong>25%</strong></p>
         </div>
-        <div class="investimento-card">
-          <h2>Fundos</h2>
-          <p>Rentabilidade: variável</p>
-          <p>Liquidez: D+1</p>
-          <button class="btn-investir">Investir</button>
-        </div>
-        <div class="investimento-card">
-          <h2>Ações</h2>
-          <p>Rentabilidade: variável</p>
-          <p>Liquidez: D+1</p>
-          <button class="btn-investir" onclick="window.location.href='../Acoes/acoes.html'">
-            Investir
-          </button>
+        <div class="acoes">
+          <button class="btn-investir" data-tipo="seguro">Investir</button>
         </div>
       </div>
-    </section>
-  </main>
-  <script>
-    const btn = document.getElementById('dashboard-btn');
-    const dropdown = document.getElementById('dashboard-dropdown');
-    btn.onclick = () => {
-      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-    };
-    window.onclick = function(event) {
-      if (!event.target.matches('#dashboard-btn') && !event.target.matches('.menu-icon')) {
-        dropdown.style.display = 'none';
-      }
-    }
-  </script>
+      <div class="investimento-card">
+        <div class="investimento-header">
+          <span class="tipo">Investimento 2</span>
+        </div>
+        <div class="investimento-info">
+          <p>Ganho de <strong>70%</strong> sobre o valor investido</p>
+          <p>Chance de ganhar: <strong>20%</strong></p>
+          <p>Chance de perder tudo: <strong>80%</strong></p>
+        </div>
+        <div class="acoes">
+          <button class="btn-investir" data-tipo="arriscado">Investir</button>
+        </div>
+      </div>
+      <div class="investimento-card">
+        <div class="investimento-header">
+          <span class="tipo">Investimento 3</span>
+        </div>
+        <div class="investimento-info">
+          <p>Ganho de <strong>100%</strong> sobre o valor investido</p>
+          <p>Chance de ganhar: <strong>5%</strong></p>
+        </div>
+        <div class="acoes">
+          <button class="btn-investir" data-tipo="simulacao">Investir</button>
+        </div>
+      </div>
+      <div class="investimento-card">
+        <div class="investimento-header">
+          <span class="tipo">Teste</span>
+        </div>
+        <div class="investimento-info">
+          <p>Ganho de <strong>50%</strong> sobre o valor investido</p>
+          <p>Chance de ganhar: <strong>80%</strong></p>
+        </div>
+        <div class="acoes">
+          <button class="btn-investir" data-tipo="teste">Investir</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fim do conteúdo principal -->
+
+  <script src="investimento.js"></script>
 </body>
 </html>
