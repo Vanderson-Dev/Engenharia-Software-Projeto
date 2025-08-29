@@ -137,3 +137,53 @@ header h1 {
 @keyframes shimmer {
   100% { transform: translateX(100%) }
 }
+
+.conversao-moedas-container {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.conversao-moedas-container h2 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.grafico-moedas {
+  height: 250px;
+  margin-bottom: 20px;
+}
+
+.legenda-moedas {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.moeda-item {
+  display: flex;
+  align-items: center;
+  margin: 5px 15px;
+}
+
+.moeda-cor {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 3px;
+  margin-right: 8px;
+}
+
+.moeda-nome {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.atualizacao {
+  text-align: center;
+  font-size: 0.9em;
+  color: #666;
+  margin-top: 15px;
+}

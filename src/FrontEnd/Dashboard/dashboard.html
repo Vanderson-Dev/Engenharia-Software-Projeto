@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dashboard Bancário</title>
   <link rel="stylesheet" href="dashboard.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <div class="dashboard">
@@ -17,6 +18,31 @@
       <div class="saldo">
         <span class="valor">R$ </span> <!-- Será preenchido com o saldo -->
       </div>
+    </section>
+
+    <section class="conversao-moedas-container">
+      <h2>Seu saldo em outras moedas</h2>
+      <div class="grafico-moedas">
+        <canvas id="graficoMoedas"></canvas>
+      </div>
+      <div class="legenda-moedas">
+        <div class="moeda-item">
+          <span class="moeda-cor" style="background-color: #36a2eb"></span>
+          <span class="moeda-nome">Dólar (USD):</span>
+          <span class="moeda-valor" id="valorUSD">--</span>
+        </div>
+        <div class="moeda-item">
+          <span class="moeda-cor" style="background-color: #ff6384"></span>
+          <span class="moeda-nome">Euro (EUR):</span>
+          <span class="moeda-valor" id="valorEUR">--</span>
+        </div>
+        <div class="moeda-item">
+          <span class="moeda-cor" style="background-color: #ffcd56"></span>
+          <span class="moeda-nome">Libra (GBP):</span>
+          <span class="moeda-valor" id="valorGBP">--</span>
+        </div>
+      </div>
+      <p class="atualizacao">Atualizado em: <span id="horaAtualizacao">--:--:--</span></p>
     </section>
 
     <section class="acoes-container">

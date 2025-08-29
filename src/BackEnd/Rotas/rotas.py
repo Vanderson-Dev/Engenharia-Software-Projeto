@@ -1,6 +1,7 @@
 from flask import Blueprint, request, jsonify
 from src.BackEnd.Classes.investimentos import realizar_investimento
 import pymysql
+import requests
 from decimal import Decimal, ROUND_HALF_UP
 
 def get_db_connection():
@@ -295,6 +296,81 @@ def extrato():
         transacoes = cursor.fetchall()
 
         return jsonify({"transacoes": transacoes})
+    finally:
+        cursor.close()
+        conn.close()
+
+# ---------------- CONVERSÃO DE MOEDAS ---------------- 
+moedas_bp = Blueprint('moedas', __name__)
+
+@moedas_bp.route('/conversao-moedas', methods=['POST'])
+def conversao_moedas():
+    data = request.get_json()
+    email = data.get('email')
+    senha = data.get('senha')
+    
+    if not email or not senha:
+        return jsonify({"mensagem": "Dados incompletos"}), 400
+        
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    try:
+        usuario = get_usuario_conta(cursor, email, senha)
+        if not usuario:
+            return jsonify({"mensagem": "Credenciais inválidas"}), 401
+            
+        saldo_brl = usuario['saldo']
+        
+        # Usando API ExchangeRate para obter cotações em tempo real
+        try:
+            response = requests.get('https://open.er-api.com/v6/latest/BRL')
+            data = response.json()
+            
+            if data['result'] == 'success':
+                rates = data['rates']
+                usd_value = saldo_brl * rates['USD']
+                eur_value = saldo_brl * rates['EUR']
+                gbp_value = saldo_brl * rates['GBP']
+                
+                return jsonify({
+                    "saldo_original": float(saldo_brl),
+                    "conversoes": {
+                        "USD": round(usd_value, 2),
+                        "EUR": round(eur_value, 2),
+                        "GBP": round(gbp_value, 2)
+                    },
+                    "taxas": {
+                        "USD": round(rates['USD'], 4),
+                        "EUR": round(rates['EUR'], 4),
+                        "GBP": round(rates['GBP'], 4)
+                    }
+                }), 200
+            else:
+                return jsonify({"mensagem": "Erro ao obter cotações"}), 500
+                
+        except requests.exceptions.RequestException:
+            # Fallback para taxas fixas em caso de erro na API
+            usd_value = saldo_brl * 0.19  # Taxa aproximada USD
+            eur_value = saldo_brl * 0.17  # Taxa aproximada EUR
+            gbp_value = saldo_brl * 0.15  # Taxa aproximada GBP
+            
+            return jsonify({
+                "saldo_original": float(saldo_brl),
+                "conversoes": {
+                    "USD": round(usd_value, 2),
+                    "EUR": round(eur_value, 2),
+                    "GBP": round(gbp_value, 2)
+                },
+                "taxas": {
+                    "USD": 0.19,
+                    "EUR": 0.17,
+                    "GBP": 0.15
+                },
+                "aviso": "Usando taxas aproximadas"
+            }), 200
+            
+    except Exception as e:
+        return jsonify({"mensagem": f"Erro interno: {str(e)}"}), 500
     finally:
         cursor.close()
         conn.close()
