@@ -138,6 +138,7 @@ def consultar_saldo():
         cursor.close()
         conn.close()
 
+
 # ---------------- CONSULTA NOME ----------------
 @saldo_bp.route('/nome', methods=['POST'])
 def consultar_nome():
@@ -167,54 +168,50 @@ transferencia_bp = Blueprint('transferencia', __name__)
 
 @transferencia_bp.route('/transferencia', methods=['POST'])
 def realizar_transferencia():
+    data = request.get_json()
+    email = data.get('email')
+    senha = data.get('senha')
+    cpf_destino = data.get('cpf_destino')
+    valor = to_amount(data.get('valor'))
+
+    if not email or not senha or not cpf_destino or valor is None or valor <= 0:
+        return jsonify({"mensagem": "Dados inválidos"}), 400
+
+    conn = get_db_connection()
     try:
-        data = request.get_json()
-        email = data.get('email')
-        senha = data.get('senha')
-        cpf_destino = data.get('cpf_destino')
-        valor = float(data.get('valor'))
+        with conn.cursor() as cursor:
+            remetente = get_usuario_conta(cursor, email, senha)
+            if not remetente: return jsonify({"mensagem": "Remetente inválido"}), 401
+            if Decimal(str(remetente['saldo'])) < valor: return jsonify({"mensagem": "Saldo insuficiente"}), 403
 
-        if not email or not senha or not cpf_destino or valor <= 0:
-            return jsonify({"mensagem": "Dados inválidos"}), 400
+            cursor.execute("SELECT c.id, c.nome, co.id AS conta_id FROM clientes c JOIN Conta co ON c.id = co.usuario_id WHERE c.cpf = %s", (cpf_destino,))
+            destinatario = cursor.fetchone()
+            if not destinatario: return jsonify({"mensagem": "Destinatário não encontrado"}), 404
+            if destinatario['id'] == remetente['cliente_id']: return jsonify({"mensagem": "Não é possível transferir para si mesmo."}), 400
 
-        conn = get_db_connection()
-        cursor = conn.cursor()
+            # Atualiza saldos
+            cursor.execute("UPDATE Conta SET saldo = saldo - %s WHERE id = %s", (valor, remetente['conta_id']))
+            cursor.execute("UPDATE Conta SET saldo = saldo + %s WHERE id = %s", (valor, destinatario['conta_id']))
 
-        cursor.execute("""
-        SELECT clientes.id, clientes.cpf, clientes.nome, Conta.saldo 
-        FROM clientes 
-        JOIN Conta ON Conta.usuario_id = clientes.id 
-        WHERE clientes.email = %s AND clientes.senha = %s
-    """, (email, senha))
-        remetente = cursor.fetchone()
-        if not remetente:
-            cursor.close()
-            conn.close()
-            return jsonify({"mensagem": "Remetente inválido"}), 401
-
-        if remetente['saldo'] < valor:
-            cursor.close()
-            conn.close()
-            return jsonify({"mensagem": "Saldo insuficiente"}), 403
-
-        cursor.execute("SELECT clientes.id FROM clientes WHERE cpf = %s", (cpf_destino,))
-        destinatario = cursor.fetchone()
-
-        if not destinatario:
-            cursor.close()
-            conn.close()
-            return jsonify({"mensagem": "Destinatário não encontrado"}), 404
-
-        cursor.execute("UPDATE Conta SET saldo = saldo - %s WHERE usuario_id = %s", (valor, remetente['id']))
-        cursor.execute("UPDATE Conta SET saldo = saldo + %s WHERE usuario_id = %s", (valor, destinatario['id']))
-        conn.commit()
-
-        cursor.close()
-        conn.close()
+            # Registra transações para o extrato de ambos
+            desc_remetente = f"Transferência para {destinatario['nome']}"
+            cursor.execute(
+                "INSERT INTO transactions (account_id, type, amount, target_account_id, description) VALUES (%s, 'transferencia', %s, %s, %s)",
+                (remetente['conta_id'], valor, destinatario['conta_id'], desc_remetente)
+            )
+            desc_destinatario = f"Transferência recebida de {remetente['nome']}"
+            cursor.execute(
+                "INSERT INTO transactions (account_id, type, amount, target_account_id, description) VALUES (%s, 'transferencia', %s, %s, %s)",
+                (destinatario['conta_id'], valor, remetente['conta_id'], desc_destinatario)
+            )
+            conn.commit()
         return jsonify({"mensagem": "Transferência realizada com sucesso!"}), 200
-
     except Exception as e:
-        return jsonify({"mensagem": "Erro interno"}), 500
+        conn.rollback()
+        return jsonify({"mensagem": f"Erro interno: {e}"}), 500
+    finally:
+        if conn:
+            conn.close()
 
 # ---------------- INVESTIMENTO ----------------
 investir_bp = Blueprint('investir', __name__)
