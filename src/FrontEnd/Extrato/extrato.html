@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Extrato da Conta</title>
+    <link rel="stylesheet" href="extrato.css" />
+</head>
+<body>
+    <div class="extrato-container">
+        <header>
+            <h1>Extrato da Conta</h1>
+            <a href="../Dashboard/dashboard.html" class="action-button">Voltar ao Dashboard</a>
+        </header>
+
+        <main>
+            <table class="transacoes-table">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Descrição</th>
+                        <th>Tipo</th>
+                        <th class="valor-header">Valor (R$)</th>
+                    </tr>
+                </thead>
+                <tbody id="transacoes-tbody">
+                    <!-- As linhas da tabela serão inseridas aqui pelo JavaScript -->
+                    <tr>
+                        <td colspan="4" class="loading">Carregando extrato...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+    <script src="extrato.js"></script>
+</body>
+</html>

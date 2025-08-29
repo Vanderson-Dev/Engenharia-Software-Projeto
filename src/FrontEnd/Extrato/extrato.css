@@ -1,0 +1,105 @@
+/* Estilos base copiados do cadastro.css para consistência */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: rgb(252, 247, 235);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinha no topo para extratos longos */
+    padding: 2rem;
+}
+
+/* Container principal com o mesmo estilo do form-container */
+.extrato-container {
+    background-color: rgb(255, 255, 255);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px; /* Um pouco maior para a tabela */
+    color: #dcc385;
+    border: 1px solid #dcc385;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+header h1 {
+    color: #dcc385;
+    margin: 0;
+}
+
+/* Botão de ação com o mesmo estilo do submit-btn */
+.action-button {
+    padding: 0.7rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #dcc385;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.action-button:hover {
+    background-color: #c9b070;
+}
+
+/* Estilização da tabela de transações */
+.transacoes-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.transacoes-table th,
+.transacoes-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+    color: #555;
+}
+
+.transacoes-table th {
+    color: #333;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.valor-header {
+    text-align: right;
+}
+
+.valor {
+    text-align: right;
+    font-weight: bold;
+}
+
+.valor.credito {
+    color: #2e7d32; /* Verde para entradas */
+}
+
+.valor.debito {
+    color: #c62828; /* Vermelho para saídas */
+}
+
+.loading,
+.no-transacoes {
+    text-align: center;
+    color: #777;
+    padding: 3rem;
+    font-style: italic;
+}
