@@ -1,198 +1,330 @@
+/* =========================================================
+    Style- Tela inicial
+   ========================================================= */
+:root {
+  /* tons base */
+  --bg-paper: rgb(252, 247, 235);     /* já usado no body */
+  --bg-header: #cfcdc3;               /* header */
+  --text-strong: #333;                /* texto primário */
+  --text-weak: #555;                  /* texto secundário (derivado) */
+  --text-invert: #ffffff;             /* texto sobre fundo escuro/claro */
+
+  /* acentos existentes */
+  --brand-beige: #dcc385;             /* botões/acentos */
+  --brand-beige-border: #9c8b61;      /* borda de botão existente */
+  --brand-danger: #c0392b;            /* hover do botão link */
+  --brand-danger-2: #e74c3c;          /* focus do botão link */
+  --ui-line: #ccc;                    /* divisórias */
+  --ui-line-strong: #383838;          /* hover menu mobile */
+  --grad-a: #FF2500;                  /* gradiente já existente */
+  --grad-b: #FF7100;                  /* gradiente já existente */
+
+  /* escalas e raios */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  --shadow-xs: 0 1px 2px rgba(0,0,0,.06);
+  --shadow-sm: 0 2px 6px rgba(0,0,0,.08);
+  --shadow-md: 0 6px 16px rgba(0,0,0,.12);
+  --shadow-lg: 0 10px 30px rgba(0,0,0,.18);
+
+  --container-w: 1080px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+  --space-9: 56px;
+  --space-10: 72px;
+}
+
+/* =========================================================
+   RESET E TIPOGRAFIA
+   ========================================================= */
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300&display=swap');
 
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Titillium Web', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Titillium Web', sans-serif;
 }
 
 html{
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 html, body {
-    background-color: rgb(252, 247, 235);
+  background-color: var(--bg-paper);
 }
 
+img{max-width:100%;display:block}
+button{font-family:inherit}
+a{color:inherit}
+
+/* =========================================================
+   LAYOUT BÁSICO
+   ========================================================= */
 .container{
-    max-width: 1080px;
-    height: 80px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
+  max-width: var(--container-w);
+  height: 80px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
 }
 
 .container1{ 
-    max-width: 1080px;
-    margin: 0 auto;
+  max-width: var(--container-w);
+  margin: 0 auto;
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
 }
 
+/* =========================================================
+   HEADER + NAVEGAÇÃO
+   ========================================================= */
 header{
-    background-color: #cfcdc3;
-    width: 100%;
-    padding: 15px 4%;
-    position: sticky;
-    top: 0;
-    z-index: 9999;
+  background-color: var(--bg-header);
+  width: 100%;
+  padding: 15px 4%;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: saturate(110%);
 }
 
-.logo{
-    width: 25%;
-}
+.logo{width: 25%}
+.logo img{width: 200px; cursor: pointer}
 
-.logo img{
-    width: 200px;
-    cursor: pointer;
-}
-
-.menu{
-    width: 75%;
-}
-
+/* menu */
+.menu{width: 75%}
+.menu nav{display:flex; gap:30px; align-items:center}
 .menu nav a{
-    color: #333;
-    text-decoration: none;
-    font-size: 18px;
-    padding-right: 30px;
-    padding-bottom: 8px;
-    position: relative;
+  color: var(--text-strong);
+  text-decoration: none;
+  font-size: 18px;
+  padding-right: 30px;
+  padding-bottom: 8px;
+  position: relative;
+  line-height: 1.2;
+  letter-spacing: .15px;
+  transition: color .25s ease;
 }
 
 .menu nav a::after{
-    content: " ";
-    width: 0px;
-    height: 4px;
-    background-image: linear-gradient(45deg , #FF2500, #FF7100);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transition: width 0.5s;
-    
+  content: " ";
+  width: 0px;
+  height: 4px;
+  background-image: linear-gradient(45deg , var(--grad-a), var(--grad-b));
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: width 0.5s;
 }
 
-.menu nav a:hover::after{
-    width: 30px;
-}
+.menu nav a:hover::after{width: 30px}
+.menu nav a:hover{color: var(--text-invert)}
 
-.menu nav a:hover{
-    color: #ffffff;
-}
-
-.social{
-    width: 25%;
-}
+/* social (links de Ação) */
+.social{width: 25%; display:flex; justify-content:flex-end; gap: var(--space-3)}
 
 .social button{
-    width: 40px;
-    height: 40px;
-    margin-right: 20px;
-    border: 0;
-    cursor: pointer;
-    background-image: linear-gradient(45deg , #FF2500, #FF7100);
-    border-radius: 5px;
-    transition: transform 0.5s;
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  border: 0;
+  cursor: pointer;
+  background-image: linear-gradient(45deg , var(--grad-a), var(--grad-b));
+  border-radius: 5px;
+  transition: transform 0.5s, filter .25s ease;
+  box-shadow: var(--shadow-xs);
 }
-
+.social button:hover{filter: brightness(1.05)}
 .social button i{
-    font-size: 20px;
-    text-align: center;
-    color: #ffffff;
+  font-size: 20px;
+  text-align: center;
+  color: var(--text-invert);
 }
 
-/*========================================================*/
+/* =========================================================
+   BOTÕES DE LINK (Cadastro/Login)
+   ========================================================= */
 .btn-link {
-    padding: 12px 25px;
-    background-color: #dcc385;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    margin-left: 10px;
-    font-weight: bold;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-    border: 1px solid #9c8b61;
+  padding: 12px 25px;
+  background-color: var(--brand-beige);
+  color: var(--text-invert);
+  text-decoration: none;
+  border-radius: 8px;
+  margin-left: 10px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+  border: 1px solid var(--brand-beige-border);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
 }
-
 .btn-link:hover {
-    background-color: #c0392b;
-    transform: scale(2.5); /* Expande o botão em 10% */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  background-color: var(--brand-danger);
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
-
 .btn-link:focus {
-    outline: none;
-    border: 2px solid #e74c3c;
+  outline: none;
+  border: 2px solid var(--brand-danger-2);
+  box-shadow: 0 0 0 4px rgba(231,76,60,.2);
 }
-/*===========================================================*/
 
-/* estilização do conteúdo */
-
+/* =========================================================
+   CONTEÚDO
+   ========================================================= */
 section{
-    padding: 90px 4%;
-    border-bottom: 1px solid #ccc;
+  padding: 90px 4%;
+  border-bottom: 1px solid var(--ui-line);
+  background: linear-gradient( to bottom, rgba(255,255,255,.0), rgba(255,255,255,.0) );
 }
-
 section h2{
-    font-size: 2em;
-    margin-bottom: 25px;
+  font-size: 2em;
+  margin-bottom: 25px;
+  color: var(--text-strong);
+  letter-spacing: .2px;
 }
-
 section p{
-    font-size: 20px;
+  font-size: 20px;
+  color: #333;
+  line-height: 1.6;
 }
 
+/* listas em serviços/contato */
+section ul{padding-left: 1.2rem; display:grid; gap:.4rem}
+section li{line-height:1.6; color:#333}
+
+/* =========================================================
+   MENU MOBILE
+   ========================================================= */
 #menu-mobile{
-    background-color: #1111119f;
-    backdrop-filter: blur(10px);
-    position: absolute;
-    top: 77px;
-    right: 0;
-    width: 100%;
-    height: 0;
-    visibility: hidden;
-    z-index: 1000;
-    transition: 0.5s;
-    overflow: hidden;
+  background-color: #1111119f;
+  backdrop-filter: blur(10px);
+  position: absolute;
+  top: 77px;
+  right: 0;
+  width: 100%;
+  height: 0;
+  visibility: hidden;
+  z-index: 1000;
+  transition: 0.5s;
+  overflow: hidden;
 }
-
 #menu-mobile nav a{
-    display: block;
-    color: #ffffff;
-    padding: 20px 30px;
-    font-size: 20px;
-    text-decoration: none;
+  display: block;
+  color: var(--text-invert);
+  padding: 20px 30px;
+  font-size: 20px;
+  text-decoration: none;
 }
-
-#menu-mobile nav a:hover{
-    background-color: #383838;
-}
+#menu-mobile nav a:hover{ background-color: var(--ui-line-strong) }
 
 #btn-menu,
 #btn-menu-close{
-    color: #ffffff;
-    font-size: 30px;
-    cursor: pointer;
-    display: none;
+  color: var(--text-invert);
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
 }
 
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
 @media screen and (max-width: 1110px) {
-    .menu,
-    .social{
-        display: none;
-    }
+  .menu, .social{ display: none }
+  .logo{ width: 100% }
+  #btn-menu, #menu-mobile{ display: block }
+  #menu-mobile.active{
+    height: calc(100vh - 77px);
+    visibility: visible;
+  }
+}
 
-    .logo{
-        width: 100%;
-    }
+/* =========================================================
+   COMPONENTES REUTILIZÁVEIS (UTILITIES)
+   Essas classes utilitárias aumentam a granularidade de estilo
+   sem alterar a paleta, e ajudam a compor páginas futuras.
+   ========================================================= */
+.u-shadow-xs{ box-shadow: var(--shadow-xs) }
+.u-shadow-sm{ box-shadow: var(--shadow-sm) }
+.u-shadow-md{ box-shadow: var(--shadow-md) }
+.u-shadow-lg{ box-shadow: var(--shadow-lg) }
 
-    #btn-menu,
-    #menu-mobile{
-        display: block;
-    }
+.u-card{
+  background:#fff;
+  border:1px solid var(--brand-beige-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+}
 
-    #menu-mobile.active{
-        height: calc(100vh - 77px);
-        visibility: visible;
-    }
+.u-grid{display:grid; gap: var(--space-6)}
+.u-grid-2{grid-template-columns: repeat(2,1fr)}
+.u-grid-3{grid-template-columns: repeat(3,1fr)}
+.u-grid-4{grid-template-columns: repeat(4,1fr)}
+
+.u-center{display:flex; align-items:center; justify-content:center}
+.u-right{display:flex; justify-content:flex-end}
+.u-gap-2{gap: var(--space-2)}
+.u-gap-3{gap: var(--space-3)}
+.u-gap-4{gap: var(--space-4)}
+.u-gap-6{gap: var(--space-6)}
+.u-mt-2{margin-top: var(--space-2)}
+.u-mt-4{margin-top: var(--space-4)}
+.u-mt-6{margin-top: var(--space-6)}
+.u-mb-6{margin-bottom: var(--space-6)}
+.u-pt-6{padding-top: var(--space-6)}
+.u-pb-6{padding-bottom: var(--space-6)}
+
+.u-gradient-text{
+  background-image: linear-gradient(45deg , var(--grad-a), var(--grad-b));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* =========================================================
+   ANIMAÇÕES
+   ========================================================= */
+@keyframes float-soft {
+  0% { transform: translateY(0) }
+  50%{ transform: translateY(-4px) }
+  100%{ transform: translateY(0) }
+}
+@keyframes pulse-outline {
+  0%{ box-shadow: 0 0 0 0 rgba(231,76,60,.25) }
+  100%{ box-shadow: 0 0 0 12px rgba(231,76,60,0) }
+}
+.anim-float{ animation: float-soft 4s ease-in-out infinite }
+.anim-focus{ animation: pulse-outline 1.4s ease-out }
+
+/* =========================================================
+   ESTADOS DE ACESSIBILIDADE
+   ========================================================= */
+:focus-visible{
+  outline: 2px dashed var(--brand-danger-2);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   IMPRESSÃO
+   ========================================================= */
+@media print {
+  header, #menu-mobile { display:none !important }
+  section{ padding: 24px 0; border: none }
+  a{ text-decoration: underline }
 }

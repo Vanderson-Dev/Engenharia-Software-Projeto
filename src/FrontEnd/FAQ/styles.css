@@ -1,3 +1,6 @@
+/* =========================================================
+   FAQ — Acessibilidade e microinterações (paleta preservada)
+   ========================================================= */
 :root {
   --bg: #fff;
   --card-bg: #fff;
@@ -11,6 +14,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background: var(--bg);
   color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
@@ -24,28 +29,24 @@ body {
   color: #fff;
   padding: 20px 0;
   text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,.1);
 }
-
 .site-header h1 {
   margin: 0;
   font-size: 26px;
+  letter-spacing: .3px;
 }
+.lead { margin-top: 8px; font-size: 16px; opacity: .95 }
 
-.lead {
-  margin-top: 8px;
-  font-size: 16px;
-}
-
-.faq-list {
-  margin-top: 20px;
-}
+.faq-list { margin-top: 20px; display:grid; gap:12px }
 
 .faq-item {
   background: var(--card-bg);
-  margin: 10px 0;
+  margin: 0;
   padding: 15px;
   border-radius: var(--radius);
   box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  border: 1px solid #9c8b61; /* da paleta do projeto */
 }
 
 .faq-question {
@@ -57,22 +58,44 @@ body {
   font-weight: bold;
   cursor: pointer;
   padding: 5px;
+  display:flex;
+  align-items:center;
+  gap: 8px;
+  position: relative;
+}
+.faq-question::before{
+  content: "+";
+  width: 22px;
+  height: 22px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius: 6px;
+  border: 1px solid #dcc385;
+  color: #dcc385;
+  font-weight: 700;
+  transition: transform .25s ease, background-color .25s ease, color .25s ease;
+}
+.faq-question[aria-expanded="true"]::before{
+  content: "–";
+  background-color: #dcc385;
+  color: #fff;
 }
 
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease;
+  transition: max-height 0.4s ease, padding .25s ease;
   padding: 0 5px;
 }
-
 .faq-answer p {
   margin: 10px 0;
   color: #555;
+  line-height: 1.6;
 }
-
 .faq-answer.open {
-  max-height: 500px; /* valor grande suficiente para qualquer resposta */
+  max-height: 500px;
+  padding-top: 8px;
 }
 
 .site-footer {
@@ -81,13 +104,21 @@ body {
   font-size: 14px;
   color: #333;
 }
-
 .site-footer a {
   color: var(--accent);
   text-decoration: none;
   font-weight: bold;
 }
+.site-footer a:hover { text-decoration: underline }
 
-.site-footer a:hover {
-  text-decoration: underline;
+/* foco visível */
+.faq-question:focus-visible{
+  outline: 2px dashed #e74c3c;
+  outline-offset: 3px;
+}
+
+/* impressão */
+@media print{
+  .site-header, .site-footer{ display:none }
+  .faq-item{ break-inside: avoid }
 }

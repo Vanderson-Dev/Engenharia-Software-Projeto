@@ -1,84 +1,94 @@
-
+/* =========================================================
+   SLIDER (melhorias visuais sem mudar paleta)
+   ========================================================= */
 section.slider{
-    margin: 0 auto;
-    width: 100%;
-    height: auto;
-    padding: 0 !important;
-    overflow: hidden;
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  padding: 0 !important;
+  overflow: hidden;
+  background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0));
 }
 
 .slider-content{
-    width: 400%;
-    height: auto;
-    display: flex;
+  width: 400%;
+  height: auto;
+  display: flex;
+  transition: transform .8s ease;
+  will-change: transform;
 }
 
 .slider-content input, .img-mobile{
-    display: none;
+  display: none;
 }
 
 .slide-box{
-    width: 25%;
-    height: auto;
-    position: relative;
-    text-align: center;
-    transition: 1s;
+  width: 25%;
+  height: auto;
+  position: relative;
+  text-align: center;
+  transition: 1s;
+  overflow: hidden;
+  border-radius: 12px;
 }
 
-.slide-box img{
-    width: 100%;
-}
+.slide-box img{ width: 100%; display:block }
 
+/* navegação */
 .nav-manual, .nav-auto{
-    position: absolute;
-    width: 100%;
-    margin-top: 35%;
-    display: flex;
-    justify-content: center;
+  position: absolute;
+  width: 100%;
+  margin-top: 35%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 .nav-manual .manual-btn, .nav-auto div{
-    border: 1px solid #ff0054;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: 0.2s;
+  border: 1px solid #ff0054; /* cor já usada no arquivo */
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform .2s ease, background-color .2s ease;
+  background: rgba(255,255,255,.35);
+  backdrop-filter: blur(2px);
+}
+.nav-manual .manual-btn:not(:last-child), .nav-auto div:not(:last-child){ margin-right: 10px }
+.nav-manual .manual-btn:hover{ background-color: #ff0054; transform: scale(1.05) }
+
+#radio1:checked ~ .nav-auto .auto-btn1,
+#radio2:checked ~ .nav-auto .auto-btn2,
+#radio3:checked ~ .nav-auto .auto-btn3{
+  background-color: #ff0054;
 }
 
-.nav-manual .manual-btn:not(:last-child), .nav-auto div:not(:last-child){
-    margin-right: 10px;
-}
+#radio1:checked ~ .primeiro{ margin-left: 0% }
+#radio2:checked ~ .primeiro{ margin-left: -25% }
+#radio3:checked ~ .primeiro{ margin-left: -50% }
 
-.nav-manual .manual-btn:hover{
-    background-color: #ff0054;
-}
+/* pausa ao focar */
+.slider-content:focus-within .slide-box{ transition-duration: .2s }
 
-#radio1:checked ~ .nav-auto .auto-btn1, #radio2:checked ~ .nav-auto .auto-btn2, #radio3:checked ~ .nav-auto .auto-btn3{
-    background-color: #ff0054;
-}
-
-#radio1:checked ~ .primeiro{
-    margin-left: 0%;
-}
-
-#radio2:checked ~ .primeiro{
-    margin-left: -25%;
-}
-
-#radio3:checked ~ .primeiro{
-    margin-left: -50%;
-}
-
+/* Responsivo */
 @media screen and (max-width: 900px) {
-    .img-desktop{
-        display: none;
-    }
-
-    .img-mobile{
-        display: block;
-    }
-
-    .nav-auto, .nav-manual{
-        margin-top: 60%;
-    }
+  .img-desktop{ display: none }
+  .img-mobile{ display: block }
+  .nav-auto, .nav-manual{ margin-top: 60% }
 }
+
+/* efeitos adicionais */
+.slide-caption{
+  position:absolute;
+  left: 0; right: 0; bottom: 16px;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0,0,0,.35);
+  font-size: clamp(16px, 3vw, 22px);
+  padding: 0 16px;
+}
+
+/* animações sutis de entrada */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px) }
+  to   { opacity: 1; transform: translateY(0) }
+}
+.slide-box > * { animation: fade-in .6s ease both }
